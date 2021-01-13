@@ -14,7 +14,7 @@ renderer.setClearColor(0x00307A, 0);
 
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera(40, width / height, 20, 500);
+var camera = new THREE.PerspectiveCamera(10, width / height, 20, 500);
 camera.position.set(0, 0, 280);
 
 var sphere = new THREE.Group();
