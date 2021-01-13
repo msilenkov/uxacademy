@@ -31,9 +31,15 @@ var mat2 = new THREE.LineBasicMaterial({
     color:0x012762
 });
 
+<<<<<<< HEAD
 var radius = 200;
 var lines = 60;
 var dots = 60;
+=======
+var radius = 100;
+var lines = 50;
+var dots = 50;
+>>>>>>> parent of 09c7f03... Update demo6.js
 for(var i = 0; i < lines; i++) {
     var geometry = new THREE.Geometry();
     var line = new THREE.Line(this.geometry, (Math.random()>0.2)?mat1:mat2);
