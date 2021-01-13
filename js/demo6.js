@@ -26,7 +26,7 @@ var mat2 = new THREE.LineBasicMaterial({
     color:0x012762
 });
 
-var radius = 100;
+var radius = 200;
 var lines = 50;
 var dots = 50;
 for(var i = 0; i < lines; i++) {
