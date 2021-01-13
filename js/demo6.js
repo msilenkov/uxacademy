@@ -10,7 +10,7 @@ var renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 renderer.setSize(width, height);
-renderer.setClearColor(0x00307A, 2);
+renderer.setClearColor(0x00307A, 0);
 
 var scene = new THREE.Scene();
 
