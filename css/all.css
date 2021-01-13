@@ -371,7 +371,9 @@ h2 {
         margin: 0 0 20px; } }
 
 .intro {
-  background: var(--section-background); }
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
   .intro .container {
     min-height: 100vh;
     display: -webkit-box;
@@ -488,9 +490,12 @@ h2 {
         height: 22px; } }
 
 .community-section {
-  background: var(--section-background-blue); }
+  background: var(--section-background-blue);
+  position: relative; }
   .community-section .container {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 750px;
+    max-height: 900px;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -499,7 +504,9 @@ h2 {
     -webkit-box-pack: justify;
             justify-content: space-between;
     padding: 105px 30px 110px;
-    color: #fff; }
+    color: #fff;
+    position: relative;
+    z-index: 3; }
   .community-section .community-row {
     display: -webkit-box;
     display: flex;
@@ -522,7 +529,10 @@ h2 {
   @media all and (max-width: 1023px) {
     .community-section .container {
       padding-top: 110px;
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      height: auto;
+      min-height: 100vh;
+      max-height: none; }
     .community-section .amount {
       font-size: 24px;
       line-height: 29px;
@@ -575,7 +585,9 @@ h2 {
         height: 34px; } }
 
 .intensive {
-  background: var(--section-background); }
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
   .intensive .container {
     padding: 105px 30px 111px;
     min-height: 100vh;
@@ -878,9 +890,13 @@ h2 {
       display: none; } }
 
 .academy-space, .partners {
-  background: var(--section-background-blue); }
+  background: var(--section-background-blue);
+  position: relative;
+  overflow: hidden; }
   .academy-space .container, .partners .container {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 750px;
+    max-height: 900px;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -888,7 +904,9 @@ h2 {
             flex-direction: column;
     -webkit-box-pack: justify;
             justify-content: space-between;
-    padding: 105px 30px 110px; }
+    padding: 105px 30px 110px;
+    position: relative;
+    z-index: 3; }
   .academy-space h2, .partners h2 {
     margin: 0;
     color: #fff; }
@@ -900,7 +918,10 @@ h2 {
     color: #fff; }
   @media all and (max-width: 1023px) {
     .academy-space .container, .partners .container {
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      height: auto;
+      min-height: 100vh;
+      max-height: none; }
     .academy-space .note, .partners .note {
       font-size: 24px;
       line-height: 120%; } }
@@ -977,7 +998,9 @@ h2 {
       margin-left: 20px; } }
 
 .partners {
-  background: var(--section-background); }
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
   .partners h2 {
     color: #021526; }
   .partners .note {
@@ -1003,7 +1026,9 @@ h2 {
 .price-section {
   background: var(--section-background-blue); }
   .price-section .container {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 750px;
+    max-height: 900px;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -1011,7 +1036,9 @@ h2 {
             flex-direction: column;
     -webkit-box-pack: justify;
             justify-content: space-between;
-    padding: 105px 30px 110px; }
+    padding: 105px 30px 110px;
+    position: relative;
+    z-index: 3; }
   .price-section h2 {
     color: #fff; }
   .price-section .note {
@@ -1030,7 +1057,10 @@ h2 {
       display: block; }
   @media all and (max-width: 1023px) {
     .price-section .container {
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      height: auto;
+      min-height: 100vh;
+      max-height: none; }
     .price-section h2 {
       margin-bottom: 30px; }
     .price-section .note {
@@ -1155,7 +1185,9 @@ h2 {
         top: 11px; } }
 
 .teachers {
-  background: var(--section-background); }
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
   .teachers .container {
     min-height: 100vh;
     display: -webkit-box;
@@ -1226,7 +1258,9 @@ h2 {
 .audience {
   background: var(--section-background-blue); }
   .audience .container {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 810px;
+    max-height: 900px;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -1234,7 +1268,9 @@ h2 {
             flex-direction: column;
     -webkit-box-pack: justify;
             justify-content: space-between;
-    padding: 105px 30px 100px; }
+    padding: 105px 30px 100px;
+    position: relative;
+    z-index: 3; }
   .audience h2 {
     margin-bottom: 90px;
     color: #fff; }
@@ -1252,7 +1288,10 @@ h2 {
         border-bottom: 2px solid rgba(255, 255, 255, 0); }
   @media all and (max-width: 1023px) {
     .audience .container {
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      height: auto;
+      min-height: 100vh;
+      max-height: none; }
     .audience h2 {
       margin-bottom: 30px; }
     .audience h3 {
@@ -1366,4 +1405,15 @@ h2 {
     .mockup-preview__header .caption {
       font-size: 12px;
       line-height: 16px; } }
+
+.scene {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.scene--full {
+  width: 100%;
+  height: 100vh; }
 /*# sourceMappingURL=all.css.map */

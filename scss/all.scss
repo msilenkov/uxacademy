@@ -271,6 +271,8 @@ h2 {
 
 .intro {
     background: var(--section-background);
+    position: relative;
+    z-index: 4;
     
     .container {
         min-height: 100vh;
@@ -435,14 +437,19 @@ h2 {
 
 .community-section {
     background: var(--section-background-blue);
+    position: relative;
     
     .container {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 750px;
+        max-height: 900px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 105px 30px 110px;
         color: #fff;
+        position: relative;
+        z-index: 3;
     }
     
     .community-row {
@@ -476,6 +483,9 @@ h2 {
         .container {
             padding-top: 110px;
             padding-bottom: 30px;
+            height: auto;
+            min-height: 100vh;
+            max-height: none;
         }
         
         .amount {
@@ -556,6 +566,8 @@ h2 {
 
 .intensive {
     background: var(--section-background);
+    position: relative;
+    z-index: 4;
     
     .container {
         padding: 105px 30px 111px;
@@ -934,13 +946,19 @@ h2 {
 
 .academy-space {
     background: var(--section-background-blue);
+    position: relative;
+    overflow: hidden;
     
     .container {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 750px;
+        max-height: 900px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 105px 30px 110px;
+        position: relative;
+        z-index: 3;
     }
     
     h2 {
@@ -959,6 +977,9 @@ h2 {
     @include mq($until: desktop) {
         .container {
             padding-bottom: 30px;
+            height: auto;
+            min-height: 100vh;
+            max-height: none;
         }
         
         .note {
@@ -1059,6 +1080,8 @@ h2 {
 .partners {
     @extend .academy-space;
     background: var(--section-background);
+    position: relative;
+    z-index: 4;
     
     h2 {
         color: #021526;
@@ -1087,11 +1110,15 @@ h2 {
     background: var(--section-background-blue);
     
     .container {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 750px;
+        max-height: 900px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 105px 30px 110px;
+        position: relative;
+        z-index: 3;
     }
     
     h2 {
@@ -1123,6 +1150,9 @@ h2 {
     @include mq($until: desktop) {
         .container {
             padding-bottom: 30px;
+            height: auto;
+            min-height: 100vh;
+            max-height: none;
         }
         
         h2 {
@@ -1292,6 +1322,8 @@ h2 {
 
 .teachers {
     background: var(--section-background);
+    position: relative;
+    z-index: 4;
     
     .container {
         min-height: 100vh;
@@ -1386,11 +1418,15 @@ h2 {
     background: var(--section-background-blue);
     
     .container {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 810px;
+        max-height: 900px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 105px 30px 100px;
+        position: relative;
+        z-index: 3;
     }
     
     h2 {
@@ -1419,6 +1455,9 @@ h2 {
     @include mq($until: desktop) {
         .container {
             padding-bottom: 30px;
+            height: auto;
+            min-height: 100vh;
+            max-height: none;
         }
         
         h2 {
@@ -1559,4 +1598,17 @@ h2 {
             }
         }
     }
+}
+
+//canvas
+.scene {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scene--full {
+    width: 100%;
+    height: 100vh;
 }
