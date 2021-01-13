@@ -1,0 +1,1524 @@
+@font-face {
+    font-family: 'Graphik LC';
+    src: url('../fonts/GraphikLC-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik LC';
+    src: url('../fonts/GraphikLC-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+$mq-breakpoints: (
+    // Base device classes
+    mobile:      321px,
+    tablet:      768px,
+    desktop:    1024px,
+    widescreen: 1220px,
+    tvscreen:   1920px,
+
+    // Tweakpoints
+    mobileLandscape: 480px
+);
+
+// Show active breakpoint in top right corner of viewport
+$mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, widescreen, tvscreen);
+
+@import "base/markup-variables";
+@import "base/markup-mixins";
+@import "base/base-reset";
+@import "mq";
+
+:root {
+    --section-background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
+    --section-background-blue: linear-gradient(247.18deg, #002762 19.44%, #160226 105.98%);
+}
+
+input::-ms-clear {
+    display: none !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+h2 {
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 62px;
+    margin: 0 0 50px;
+    
+    @include mq($until: desktop) {
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 400;
+    }
+}
+
+.page {
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1230px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 118px 0 50px;
+    transition: transform 0.3s;
+    z-index: 50;
+    
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 100%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        content: '';
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        display: block;
+        height: 55px;
+        position: relative;
+        z-index: 1;
+        
+        img {
+            display: block;
+            width: auto;
+            height: 117px;
+            margin: -31px 0;
+            transition: transform 0.3s;
+            transform-origin: 0 50%;
+        }
+    }
+    
+    &.fixed {
+        transform: translate(0, -68px);
+        
+        &:before {
+            opacity: 1;
+        }
+        
+        .logo {
+            img {
+                transform: scale(0.5);
+            }
+        }
+    }
+    
+    @include mq($until: widescreen) {
+        padding: 87px 0 50px;
+        
+        .logo {
+            img {
+                height: 55px;
+                margin: 0;
+            }
+        }
+    
+        &.fixed {
+            transform: translate(0, -37px);
+        
+            .logo {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    
+    @include mq($until: desktop) {
+        padding: 30px 0;
+        
+        &.fixed {
+            transform: translate(0, 0);
+        }
+        
+        &.nav-active {
+            .nav-opener {
+                &:before {
+                    transform: rotate(45deg);
+                    top: 14px;
+                }
+                
+                &:after {
+                    transform: rotate(-45deg);
+                    top: 14px;
+                }
+                
+                span {
+                    transform: rotate(-45deg);
+                    top: 14px;
+                    opacity: 0;
+                }
+            }
+            
+            .nav {
+                transform: translate(0, 0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+        }
+    }
+}
+
+.nav-opener {
+    display: none;
+    
+    @include mq($until: desktop) {
+        display: block;
+        width: 48px;
+        height: 30px;
+        position: relative;
+        z-index: 5;
+        
+        &:before,
+        &:after,
+        span {
+            width: 48px;
+            height: 3px;
+            background: #000;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+        }
+    
+        &:after {
+            top: 14px;
+        }
+        
+        span {
+            top: 28px;
+        }
+    }
+}
+
+.nav {
+    position: relative;
+    z-index: 1;
+    
+    ul {
+        @extend %listreset;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    li {
+        margin-left: 35px;
+    }
+    
+    a {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 34px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,0,0,0);
+        
+        &:hover {
+            border-bottom: 1px solid rgba(0,0,0,1);
+        }
+    }
+    
+    @include mq($until: desktop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 80px 30px 20px;
+        transform: translate(0, -20px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s;
+        
+        ul {
+            display: block;
+        }
+        
+        li {
+            margin: 0 0 20px;
+        }
+    }
+}
+
+.intro {
+    background: var(--section-background);
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 118px;
+    }
+    
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    &__content {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 287px 0 50px;
+        
+        h1 {
+            margin: 0 0 50px;
+            max-width: 815px;
+            font-size: 52px;
+            font-weight: 300;
+            line-height: 62px;
+        }
+    }
+    
+    &__footer-text {
+        flex: 1 0 0;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 38px;
+        
+        p {
+            margin: 0;
+            max-width: 750px;
+        }
+        
+        a {
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            
+            &:hover {
+                border-bottom: 2px solid rgba(0,0,0,0);
+            }
+        }
+    }
+    
+    &__footer-logo {
+        img {
+            display: block;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        &__content {
+            padding: 150px 0 40px;
+            
+            h1 {
+                font-size: 32px;
+                line-height: 34px;
+                margin: 0 0 20px;
+                font-weight: 400;
+            }
+        }
+        
+        .container {
+            padding-bottom: 40px;
+        }
+        
+        &__footer {
+            display: block;
+        }
+    
+        &__footer-text {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 30px;
+        }
+    
+        &__footer-logo {
+            img {
+                height: 30px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 40px 19px;
+    background: #FFFFFF;
+    border: 3px solid #021526;
+    text-decoration: none;
+    
+    &-text {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 140%;
+        color: #000000;
+        margin-right: 37px;
+    }
+    
+    &-ico {
+        transition: all 0.3s;
+        
+        img {
+            display: block;
+        }
+    }
+    
+    &:hover {
+        .btn-ico {
+            transform: translate(10px, 0);
+        }
+    }
+    
+    @include mq($until: desktop) {
+        padding: 19px 25px 18px;
+        
+        &-text {
+            span {
+                display: none;
+            }
+        }
+    
+        &-ico {
+            img {
+                height: 22px;
+            }
+        }
+    }
+}
+
+.community-section {
+    background: var(--section-background-blue);
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 105px 30px 110px;
+        color: #fff;
+    }
+    
+    .community-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px;
+    }
+    
+    .community-col {
+        flex: 1 0 0;
+        padding: 0 20px;
+    }
+    
+    .amount {
+        display: block;
+        font-size: 52px;
+        font-weight: 300;
+        line-height: 62px;
+        color: #fff;
+        
+        span {
+            display: block;
+        }
+    }
+    
+    h2 {
+        color: #fff;
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-top: 110px;
+            padding-bottom: 30px;
+        }
+        
+        .amount {
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: 400;
+            
+            span {
+                display: inline;
+                margin-right: 6px;
+            }
+        }
+    }
+    
+    @include mq($until: tablet) {
+        .community-row {
+            display: block;
+        }
+    
+        .community-col {
+            flex: 1 0 0;
+            margin-bottom: 50px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.community-link {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    margin-bottom: 69px;
+    
+    &__text {
+        margin-right: 15px;
+        color: #fff;
+        font-weight: 300;
+        font-size: 92px;
+        line-height: 120%;
+        border-bottom: 3px solid #fff;
+    }
+    
+    &__ico {
+        display: inline-block;
+        position: relative;
+        top: -6px;
+        transition: transform 0.3s;
+        
+        img {
+            display: inline-block;
+        }
+    }
+    
+    &:hover {
+        .community-link__ico {
+            transform: translate(5px, 0);
+        }
+    }
+    
+    @include mq($until: desktop) {
+        margin-bottom: 8px;
+    
+        &__text {
+            font-size: 62px;
+            line-height: 74px;
+        }
+    
+        &__ico {
+            img {
+                height: 34px;
+            }
+        }
+    }
+}
+
+.intensive {
+    background: var(--section-background);
+    
+    .container {
+        padding: 105px 30px 111px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    h2 {
+        margin: 0 0 90px;
+    }
+    
+    .note {
+        display: block;
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 300;
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-top: 110px;
+            padding-bottom: 30px;
+        }
+        
+        h2 {
+            margin: 0 0 30px;
+        }
+        
+        .note {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+}
+
+.calendar {
+    flex: 1 0 0;
+    margin-bottom: 89px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    position: relative;
+    min-height: 700px;
+    
+    @include mq($until: desktop) {
+        min-height: auto;
+        border-top: 0;
+        border-left: 0;
+    }
+}
+
+.calendar-row {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    height: calc(100% + 2px);
+    display: flex;
+    flex-wrap: wrap;
+    
+    @include mq($until: desktop) {
+        position: relative;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+}
+
+.calendar-item {
+    height: 33.3333%;
+    flex: 0 0 25%;
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    min-width: 0;
+    
+    &.active {
+        .calendar-item__popup {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+    
+    &__opener {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 27px 30px 23px;
+        position: relative;
+        z-index: 4;
+        cursor: pointer;
+    
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            background: linear-gradient(247.18deg, #0066FF 19.44%, #160226 105.98%);
+            transition: all 0.3s;
+            opacity: 0;
+        }
+        
+        &:hover {
+            color: #fff;
+    
+            h3,
+            .day,
+            .date {
+                color: #fff;
+            }
+            
+            &:before {
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                z-index: 3;
+                opacity: 1;
+            }
+        }
+    }
+    
+    &_flexible {
+        flex: 1 0 0;
+    }
+    
+    h3 {
+        margin: 0 0 10px;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 38px;
+        transition: color 0.3s;
+        position: relative;
+        z-index: 4;
+    }
+    
+    .date,
+    .day {
+        transition: color 0.3s;
+    }
+    
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        line-height: 34px;
+        color: #000;
+        font-weight: 300;
+        position: relative;
+        z-index: 4;
+    }
+    
+    &__popup {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 0;
+        background: #fff;
+        z-index: 5;
+        padding: 3.5vh 50px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s;
+        
+        &-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin: 0 0 4vh;
+        }
+        
+        &-content {
+            flex: 1 0 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        &-item {
+            display: flex;
+            flex-wrap: wrap;
+            
+            .time {
+                font-size: 32px;
+                line-height: 120%;
+                width: 90px;
+                margin-right: 40px;
+            }
+            
+            .text-box {
+                flex: 1 0 0;
+            }
+            
+            .title {
+                display: block;
+                font-size: 32px;
+                line-height: 120%;
+                color: #000000;
+            }
+            
+            .teacher-name {
+                display: block;
+                font-size: 24px;
+                line-height: 34px;
+                opacity: 0.5;
+            }
+        }
+    }
+    
+    @include mq($until: widescreen) {
+        &__popup {
+            padding: 3.5vh 28px;
+            right: 0;
+        }
+        
+        h3 {
+            font-size: 22px;
+            line-height: 29px;
+        }
+    
+        &__footer {
+            font-size: 22px;
+            line-height: 29px;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        flex: 0 0 50%;
+        height: 200px;
+    
+        &-header {
+            margin-bottom: 30px;
+        }
+        
+        &__popup {
+            &-item {
+                .time {
+                    font-size: 18px;
+                    line-height: 25px;
+                    width: 47px;
+                    margin-right: 14px;
+                    margin-top: 3px;
+                }
+        
+                .title {
+                    font-size: 22px;
+                    line-height: 29px;
+                }
+        
+                .teacher-name {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+    
+    @include mq($until: tablet) {
+        height: 145px;
+        flex: 0 0 100%;
+    
+        &__popup {
+            &-content {
+                display: block;
+            }
+        }
+        
+        &__opener {
+            padding: 15px 20px;
+        }
+    }
+}
+
+.schedule {
+    @extend %listreset;
+    flex: 0 0 50%;
+    padding-right: 30px;
+    
+    &:last-child {
+        padding: 0 0 0 30px;
+    }
+    
+    li {
+        margin-bottom: 1.5vh;
+    }
+    
+    @include mq($until: desktop) {
+        li {
+            margin-bottom: 30px;
+        }
+    }
+    
+    @include mq($until: tablet) {
+        padding: 0 !important;
+        flex: 0 0 100%;
+    }
+}
+
+.btn-back {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 300;
+    font-size: 52px;
+    line-height: 120%;
+    text-decoration: none;
+    flex: 0 0 63%;
+    padding-right: 20px;
+    
+    .ico {
+        margin-top: 12px;
+        margin-right: 20px;
+        
+        img {
+            display: block;
+        }
+    }
+    
+    .text {
+        flex: 1 0 0;
+    }
+    
+    @include mq($until: desktop) {
+        font-size: 24px;
+        line-height: 28px;
+        display: block;
+        
+        .ico {
+            img {
+                height: 32px;
+                margin: 0 0 20px;
+            }
+        }
+    }
+}
+
+.next-day {
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 120%;
+    flex: 0 0 37%;
+    margin-top: 18px;
+    
+    .text {
+        flex: 1 0 0;
+        text-align: right;
+    }
+    
+    .ico {
+        width: 42px;
+        margin-left: 17px;
+        margin-top: 7px;
+        
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        display: none;
+    }
+}
+
+.academy-space {
+    background: var(--section-background-blue);
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 105px 30px 110px;
+    }
+    
+    h2 {
+        margin: 0;
+        color: #fff;
+    }
+    
+    .note {
+        display: block;
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 300;
+        color: #fff;
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-bottom: 30px;
+        }
+        
+        .note {
+            font-size: 24px;
+            line-height: 120%;
+        }
+    }
+}
+
+.gallery-holder {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    
+    @include mq($until: desktop) {
+        display: block;
+        padding-bottom: 0;
+    }
+}
+
+.gallery-row {
+    display: flex;
+    
+    @include mq($until: desktop) {
+        display: block;
+        transform: none !important;
+    }
+}
+
+.gallery-col {
+    width: 435px;
+    margin-right: 40px;
+    
+    &:last-child {
+        margin-right: 0;
+    }
+    
+    @include mq($until: desktop) {
+        width: 100%;
+        margin-bottom: 25px;
+        margin-right: 0;
+    }
+}
+
+.space-item {
+    display: block;
+    text-decoration: none;
+    
+    &__image {
+        border: 2px solid #000;
+        height: 245px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+    
+    &__text {
+        padding: 16px 25px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 2px solid #000;
+        margin-top: -1px;
+        background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
+        
+        p {
+            flex: 1 0 0;
+            margin: 0;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        
+        .zoom {
+            img {
+                display: block;
+            }
+        }
+    }
+    
+    @include mq($until: tablet) {
+        &__image {
+            height: 173px;
+        }
+    
+        &__text {
+            .zoom {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.partners {
+    @extend .academy-space;
+    background: var(--section-background);
+    
+    h2 {
+        color: #021526;
+    }
+    
+    .note {
+        color: #021526;
+    }
+}
+
+.partner-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 263px;
+    background: linear-gradient(247.18deg, #002762 19.44%, #160226 105.98%);
+    color: #fff;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 300;
+}
+
+.price-section {
+    background: var(--section-background-blue);
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 105px 30px 110px;
+    }
+    
+    h2 {
+        color: #fff;
+    }
+    
+    .note {
+        display: block;
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 300;
+        color: #fff;
+        
+        a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid #fff;
+            
+            &:hover {
+                border-bottom: 2px solid rgba(0,0,0,0);
+            }
+        }
+        
+        .block {
+            display: block;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-bottom: 30px;
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+        }
+        
+        .note {
+            font-size: 24px;
+            line-height: 29px;
+            
+            span {
+                display: block;
+                margin-bottom: 10px;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.price-content {
+    margin: auto 0 80px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    &__card {
+        width: 586px;
+        height: 339px;
+        background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
+        padding: 11px 30px 29px;
+        margin: 0 55px 0 0;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .price {
+            display: block;
+            font-weight: 300;
+            font-size: 104px;
+            line-height: 120%;
+            color: #000;
+        }
+    }
+    
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        
+        .ico {
+            flex: 0 0 auto;
+            margin-left: 10px;
+            
+            img {
+                display: block;
+            }
+        }
+        
+        .text {
+            font-weight: 300;
+            font-size: 32px;
+            line-height: 120%;
+            padding-right: 30px;
+            flex: 1 0 0;
+        }
+    }
+    
+    &__text-box {
+        flex: 1 0 0;
+    }
+    
+    @include mq($until: desktop) {
+        display: block;
+        margin-bottom: 0;
+    
+        &__card {
+            margin-bottom: 30px;
+        }
+    
+        &__footer {
+            .text {
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 29px;
+                padding-right: 30px;
+            }
+        }
+    }
+    
+    @include mq($until: tablet) {
+        &__card {
+            width: 100%;
+            height: 185px;
+            padding: 11px 30px 20px;
+    
+            .price {
+                font-size: 47px;
+                line-height: 74px;
+            }
+        }
+    
+        &__footer {
+            .text {
+                font-size: 20px;
+            }
+            
+            .ico {
+                width: 43px;
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+.bulleted-list {
+    @extend %listreset;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 140%;
+    
+    li {
+        position: relative;
+        padding-left: 15px;
+        color: #fff;
+        margin-bottom: 18px;
+        
+        &:before {
+            position: absolute;
+            top: 17px;
+            left: 0;
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        font-size: 24px;
+        line-height: 29px;
+        display: none;
+        
+        li {
+            &:before {
+                top: 11px;
+            }
+        }
+    }
+}
+
+.teachers {
+    background: var(--section-background);
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 105px 30px 100px;
+    }
+    
+    h2 {
+        margin-bottom: 90px;
+    }
+    
+    @include mq($until: desktop) {
+        h2 {
+            margin-bottom: 30px;
+        }
+    
+        .container {
+            padding: 105px 30px 30px;
+        }
+    }
+}
+
+.teachers-list {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -37px -50px;
+    
+    li {
+        padding: 0 37px 50px;
+        flex: 0 0 33.33333%;
+    }
+    
+    &__image {
+        height: 236px;
+        margin: 0 0 38px;
+        background: linear-gradient(247.18deg, #0066FF 19.44%, #160226 105.98%);
+        
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    h3 {
+        margin: 0 0 15px;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 120%;
+    }
+    
+    .role {
+        display: block;
+        font-size: 24px;
+        line-height: 140%;
+    }
+    
+    p {
+        margin: 0 -5px 0 0;
+        font-size: 24px;
+        line-height: 140%;
+        font-weight: 300;
+        opacity: 0.5;
+    }
+    
+    @include mq($until: widescreen) {
+        margin: 0 -15px -30px;
+        
+        li {
+            padding: 0 15px 30px;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        li {
+            flex: 0 0 50%;
+        }
+    }
+    
+    @include mq($until: tablet) {
+        li {
+            flex: 0 0 100%;
+        }
+    }
+}
+
+.audience {
+    background: var(--section-background-blue);
+    
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 105px 30px 100px;
+    }
+    
+    h2 {
+        margin-bottom: 90px;
+        color: #fff;
+    }
+    
+    h3 {
+        font-weight: 300;
+        font-size: 42px;
+        line-height: 55px;
+        margin: 0;
+        color: #fff;
+        
+        a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid #fff;
+            
+            &:hover {
+                border-bottom: 2px solid rgba(255,255,255,0);
+            }
+        }
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-bottom: 30px;
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+        }
+        
+        h3 {
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+}
+
+.mockup-preview {
+    .fancybox-content {
+        border-radius: 6px;
+        
+        &:hover {
+            .prev,
+            .next {
+                opacity: 1;
+            }
+        }
+    }
+    
+    &__header {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
+        border: 2px solid #021526;
+        padding: 30px 53px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        
+        .caption {
+            display: block;
+            font-size: 32px;
+            line-height: 38px;
+            text-align: center;
+            flex: 1 0 0;
+        }
+    }
+    
+    &__image {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: calc(100%);
+        
+        
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+    }
+    
+    .fancybox-image,
+    .fancybox-caption {
+        display: none;
+    }
+    
+    .prev,
+    .next {
+        background: url(../images/ico-prev.svg) no-repeat 0 0 / 100% 100%;
+        display: block;
+        width: 43px;
+        height: 43px;
+        border: 0;
+        cursor: pointer;
+        font-size: 0;
+        z-index: 5;
+        transition: all 0.3s;
+        opacity: 1;
+        margin-right: 15px;
+        
+        &.disabled {
+            opacity: 0 !important;
+        }
+    }
+    
+    .next {
+        background: url(../images/ico-next.svg) no-repeat 0 0 / 100% 100%;
+        left: auto;
+        right: 4px;
+        margin: 0 0 0 15px;
+        
+        &:after {
+            border-width: 4px 0 4px 8px;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        &__header {
+            padding: 10px 15px;
+            
+            .caption {
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    
+        .prev,
+        .next {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    
+    @include mq($until: tablet) {
+        &__header {
+            top: 100%;
+            bottom: auto;
+            
+            .caption {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}
