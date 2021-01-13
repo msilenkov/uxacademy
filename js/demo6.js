@@ -70,7 +70,7 @@ function render(a) {
 }
 
 function onResize() {
-    canvas.style.width = '';
+    canvas.style.width = 1;
     canvas.style.height = '';
     width = canvas.offsetWidth;
     height = canvas.offsetHeight;
