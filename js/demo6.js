@@ -23,7 +23,7 @@ var mat1 = new THREE.LineBasicMaterial({
     color:0x012762
 });
 var mat2 = new THREE.LineBasicMaterial({
-    color:0x3F51B5
+    color:0x012762
 });
 
 var radius = 100;
