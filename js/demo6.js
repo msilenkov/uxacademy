@@ -15,7 +15,7 @@ renderer.setClearColor(0x00307A, 0);
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera(7, width / height, 20, 500);
-camera.position.set(50, 0, 280);
+camera.position.set(10, 0, 280);
 
 var sphere = new THREE.Group();
 scene.add(sphere);
@@ -27,8 +27,8 @@ var mat2 = new THREE.LineBasicMaterial({
 });
 
 var radius = 200;
-var lines = 20;
-var dots = 20;
+var lines = 60;
+var dots = 60;
 for(var i = 0; i < lines; i++) {
     var geometry = new THREE.Geometry();
     var line = new THREE.Line(this.geometry, (Math.random()>0.2)?mat1:mat2);
