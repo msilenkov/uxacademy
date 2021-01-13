@@ -27,8 +27,8 @@ var mat2 = new THREE.LineBasicMaterial({
 });
 
 var radius = 200;
-var lines = 50;
-var dots = 50;
+var lines = 20;
+var dots = 20;
 for(var i = 0; i < lines; i++) {
     var geometry = new THREE.Geometry();
     var line = new THREE.Line(this.geometry, (Math.random()>0.2)?mat1:mat2);
