@@ -17,6 +17,7 @@ var scene = new THREE.Scene();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var camera = new THREE.PerspectiveCamera(7, width / height, 20, 500);
 camera.position.set(40, 0, 280);
 =======
@@ -24,6 +25,9 @@ var camera = new THREE.PerspectiveCamera(10, width / height, 20, 500);
 =======
 var camera = new THREE.PerspectiveCamera(40, width / height, 0.6, 1000);
 >>>>>>> parent of f6cba70... Update demo6.js
+=======
+var camera = new THREE.PerspectiveCamera(200, width / height, 0.1, 1000);
+>>>>>>> parent of 91d781b... Update demo6.js
 =======
 var camera = new THREE.PerspectiveCamera(200, width / height, 0.1, 1000);
 >>>>>>> parent of 91d781b... Update demo6.js
