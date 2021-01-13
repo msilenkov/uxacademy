@@ -64,8 +64,8 @@ function updateDots (a) {
 function render(a) {
     requestAnimationFrame(render);
     updateDots(a);
-    sphere.rotation.y = (a * 0.0001);
-    sphere.rotation.x = (-a * 0.0001);
+    sphere.rotation.y = (a * 0.00001);
+    sphere.rotation.x = (-a * 0.00001);
     renderer.render(scene, camera);
 }
 
