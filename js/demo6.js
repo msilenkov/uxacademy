@@ -8,7 +8,7 @@ var renderer = new THREE.WebGLRenderer({
 	alpha: true,
     antialias: true
 });
-renderer.setPixelRatio(window.devicePixelRatio > 1 ? 4 : 1);
+renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 renderer.setSize(width, height);
 renderer.setClearColor(0x00307A, 0);
 
@@ -32,7 +32,7 @@ var dots = 60;
 for(var i = 0; i < lines; i++) {
     var geometry = new THREE.Geometry();
     var line = new THREE.Line(this.geometry, (Math.random()>0.2)?mat1:mat2);
-    line.speed = Math.random() * 1200 + 250;
+    line.speed = Math.random() * 800 + 250;
     line.wave = Math.random();
     line.radius = Math.floor(radius + (Math.random()-0.5) * (radius*0.2));
     for(var j=0;j<dots;j++){
@@ -64,13 +64,13 @@ function updateDots (a) {
 function render(a) {
     requestAnimationFrame(render);
     updateDots(a);
-    sphere.rotation.y = (a * 0.00001);
-    sphere.rotation.x = (-a * 0.00001);
+    sphere.rotation.y = (a * 0.0001);
+    sphere.rotation.x = (-a * 0.0001);
     renderer.render(scene, camera);
 }
 
 function onResize() {
-    canvas.style.width = '';
+    canvas.style.width = ;
     canvas.style.height = '';
     width = canvas.offsetWidth;
     height = canvas.offsetHeight;
