@@ -14,8 +14,13 @@ renderer.setClearColor(0x00307A, 0);
 
 var scene = new THREE.Scene();
 
+<<<<<<< HEAD
 var camera = new THREE.PerspectiveCamera(7, width / height, 20, 500);
 camera.position.set(40, 0, 280);
+=======
+var camera = new THREE.PerspectiveCamera(10, width / height, 20, 500);
+camera.position.set(0, 0, 280);
+>>>>>>> parent of 868d67f... Update demo6.js
 
 var sphere = new THREE.Group();
 scene.add(sphere);
