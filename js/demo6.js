@@ -15,10 +15,14 @@ renderer.setClearColor(0x000000, 0);
 var scene = new THREE.Scene();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var camera = new THREE.PerspectiveCamera(7, width / height, 20, 500);
 camera.position.set(40, 0, 280);
 =======
 var camera = new THREE.PerspectiveCamera(10, width / height, 20, 500);
+=======
+var camera = new THREE.PerspectiveCamera(40, width / height, 0.6, 1000);
+>>>>>>> parent of f6cba70... Update demo6.js
 camera.position.set(0, 0, 280);
 >>>>>>> parent of 868d67f... Update demo6.js
 
