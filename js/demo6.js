@@ -20,7 +20,7 @@ camera.position.set(0, 0, 280);
 var sphere = new THREE.Group();
 scene.add(sphere);
 var mat1 = new THREE.LineBasicMaterial({
-    color:0x4a4a4a
+    color:0x012762
 });
 var mat2 = new THREE.LineBasicMaterial({
     color:0x3F51B5
