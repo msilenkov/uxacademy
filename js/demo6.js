@@ -8,7 +8,7 @@ var renderer = new THREE.WebGLRenderer({
 	alpha: true,
     antialias: true
 });
-renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
+renderer.setPixelRatio(window.devicePixelRatio > 1 ? 4 : 1);
 renderer.setSize(width, height);
 renderer.setClearColor(0x00307A, 0);
 
