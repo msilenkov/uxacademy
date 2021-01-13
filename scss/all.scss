@@ -77,7 +77,7 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 118px 0 50px;
+    padding: 100px 0 30px;
     transition: transform 0.3s;
     z-index: 50;
     
@@ -117,7 +117,7 @@ h2 {
     }
     
     &.fixed {
-        transform: translate(0, -68px);
+        transform: translate(0, -70px);
         
         &:before {
             opacity: 1;
@@ -287,11 +287,6 @@ h2 {
     }
     
     &__content {
-        flex: 1 0 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
         padding: 287px 0 50px;
         
         h1 {
@@ -330,6 +325,16 @@ h2 {
         }
     }
     
+    @include mq($from: desktop) {
+        &__content {
+            flex: 1 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    }
+    
     @include mq($until: desktop) {
         &__content {
             padding: 150px 0 40px;
@@ -363,10 +368,22 @@ h2 {
             }
         }
     }
+    
+    @include mq($until: tablet) {
+        .container {
+            min-height: auto;
+            display: block;
+        }
+    
+        &__content {
+            display: block;
+            overflow: hidden;
+        }
+    }
 }
 
 .btn {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 20px 40px 19px;
@@ -375,6 +392,7 @@ h2 {
     text-decoration: none;
     
     &-text {
+        display: block;
         font-weight: 300;
         font-size: 24px;
         line-height: 140%;
@@ -383,6 +401,7 @@ h2 {
     }
     
     &-ico {
+        display: block;
         transition: all 0.3s;
         
         img {
@@ -398,6 +417,7 @@ h2 {
     
     @include mq($until: desktop) {
         padding: 19px 25px 18px;
+        height: 73px;
         
         &-text {
             span {
@@ -1148,6 +1168,14 @@ h2 {
             line-height: 120%;
             color: #000;
         }
+        
+        &:hover {
+            .price-content__footer {
+                .ico {
+                    transform: translate(10px, 0);
+                }
+            }
+        }
     }
     
     &__footer {
@@ -1159,6 +1187,7 @@ h2 {
         .ico {
             flex: 0 0 auto;
             margin-left: 10px;
+            transition: all 0.3s;
             
             img {
                 display: block;
@@ -1413,6 +1442,15 @@ h2 {
                 opacity: 1;
             }
         }
+    }
+    
+    .btn-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: url(../images/ico-close.svg) no-repeat 0 0;
+        width: 45px;
+        height: 45px;
     }
     
     &__header {

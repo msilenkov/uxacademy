@@ -86,6 +86,7 @@ $(function() {
 		smallBtn: true,
 		arrows: false,
 		transitionEffect: "slide",
+		animationEffect: "fade",
 		afterLoad : function(instance, current) {
 			current.$content.append(`
 					<a href="#" class="btn-close" data-fancybox-close></a>
