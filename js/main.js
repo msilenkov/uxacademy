@@ -65,6 +65,12 @@ $(function() {
 	});
 
 	// header scroll
+	if($(window).scrollTop() > 0) {
+		$('.header').addClass('fixed');
+	} else {
+		$('.header').removeClass('fixed');
+	}
+
 	$(window).scroll(function(event) {
 		if($(window).scrollTop() > 0) {
 			$('.header').addClass('fixed');
