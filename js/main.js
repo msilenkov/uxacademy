@@ -113,6 +113,37 @@ $(function() {
 	});
 });
 
+window.onload = function(){
+	$.ajax({
+		type: 'GET',
+		url: 'text.html',
+		dataType: 'html',
+		success: function(data) {
 
+			//cross platform xml object creation from w3schools
+			try //Internet Explorer
+			{
+				xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+				xmlDoc.async="false";
+				xmlDoc.loadXML(data);
+			}
+			catch(e)
+			{
+				try // Firefox, Mozilla, Opera, etc.
+				{
+					parser=new DOMParser();
+					xmlDoc=parser.parseFromString(data,"text/xml");
+				}
+				catch(e)
+				{
+					alert(e.message);
+					return;
+				}
+			}
+
+			alert(xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue);
+		}
+	});
+}
 
 
