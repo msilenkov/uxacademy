@@ -42,6 +42,10 @@ $(function() {
 	// schedule
 	$('.calendar-item__opener').on('click', function(){
 		$(this).closest('.calendar-item').addClass('active');
+
+		$('html,body').animate({
+			scrollTop: $('.intensive').offset().top + 110
+		}, 500);
 	});
 
 	$('.calendar-item__popup .js-popup-close').on('click', function(e){
@@ -61,6 +65,12 @@ $(function() {
 	});
 
 	// header scroll
+	if($(window).scrollTop() > 0) {
+		$('.header').addClass('fixed');
+	} else {
+		$('.header').removeClass('fixed');
+	}
+
 	$(window).scroll(function(event) {
 		if($(window).scrollTop() > 0) {
 			$('.header').addClass('fixed');
@@ -102,7 +112,5 @@ $(function() {
 		}
 	});
 });
-
-
 
 
