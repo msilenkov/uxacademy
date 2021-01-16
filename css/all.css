@@ -606,7 +606,8 @@ h2 {
   @media all and (max-width: 1023px) {
     .intensive .container {
       padding-top: 110px;
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      display: block; }
     .intensive h2 {
       margin: 0 0 30px; }
     .intensive .note {
@@ -641,7 +642,21 @@ h2 {
       position: relative;
       height: auto;
       top: 0;
-      left: 0; } }
+      left: 0;
+      display: block; }
+      .calendar-row.opened .calendar-item {
+        display: none; }
+        .calendar-row.opened .calendar-item.active {
+          display: block;
+          height: auto; }
+          .calendar-row.opened .calendar-item.active .calendar-item__opener {
+            display: none; }
+          .calendar-row.opened .calendar-item.active .calendar-item__popup {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: auto; } }
 
 .calendar-item {
   height: 33.3333%;
@@ -793,21 +808,36 @@ h2 {
     .calendar-item {
       -webkit-box-flex: 0;
               flex: 0 0 50%;
-      height: 200px; }
+      height: 200px;
+      overflow: hidden; }
+      .calendar-item:last-child .calendar-item__popup-content {
+        display: none; }
+      .calendar-item:last-child .calendar-item__popup-header {
+        margin-bottom: 0 !important; }
       .calendar-item-header {
         margin-bottom: 30px; }
-      .calendar-item__popup-item .time {
-        font-size: 18px;
-        line-height: 25px;
-        width: 47px;
-        margin-right: 14px;
-        margin-top: 3px; }
-      .calendar-item__popup-item .title {
-        font-size: 22px;
-        line-height: 29px; }
-      .calendar-item__popup-item .teacher-name {
-        font-size: 18px;
-        line-height: 24px; } }
+      .calendar-item__popup {
+        display: block;
+        overflow: hidden; }
+        .calendar-item__popup-item .time {
+          font-size: 18px;
+          line-height: 25px;
+          width: 47px;
+          margin-right: 14px;
+          margin-top: 3px; }
+        .calendar-item__popup-item .title {
+          font-size: 22px;
+          line-height: 29px; }
+        .calendar-item__popup-item .teacher-name {
+          font-size: 18px;
+          line-height: 24px; }
+        .calendar-item__popup-header {
+          margin-bottom: 30px;
+          display: block; }
+          .calendar-item__popup-header .ico {
+            display: block; }
+          .calendar-item__popup-header .text {
+            padding-right: 0; } }
   @media all and (max-width: 767px) {
     .calendar-item {
       height: 145px;

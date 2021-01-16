@@ -42,9 +42,10 @@ $(function() {
 	// schedule
 	$('.calendar-item__opener').on('click', function(){
 		$(this).closest('.calendar-item').addClass('active');
+		$(this).closest('.calendar-row').addClass('opened');
 
 		$('html,body').animate({
-			scrollTop: $('.intensive').offset().top + 110
+			scrollTop: $('.intensive').offset().top + 90
 		}, 500);
 	});
 
@@ -52,6 +53,7 @@ $(function() {
 		e.preventDefault();
 
 		$(this).closest('.calendar-item').removeClass('active');
+		$(this).closest('.calendar-row').removeClass('opened');
 	});
 
 	$('.calendar-item__popup .js-next').on('click', function(e){
@@ -62,6 +64,32 @@ $(function() {
 		setTimeout(() => {
 			$(this).closest('.calendar-item').removeClass('active');
 		},150);
+	});
+
+	let calendar = document.getElementById('calendar');
+
+	let isFocused = (document.activeElement === calendar);
+
+	document.addEventListener('keydown', function(e) {
+		if(e.keyCode === 39) {
+			if($(calendar).find('.active').is(':last-child')) {
+				$(calendar).find('.active').removeClass('active');
+				$(calendar).find('.calendar-row').removeClass('opened');
+			}
+
+			$(calendar).find('.active').next().addClass('active');
+		}
+	});
+
+	$(document).mouseup(function(e) {
+		var container = $("#calendar");
+
+		// if the target of the click isn't the container nor a descendant of the container
+		if (!container.is(e.target) && container.has(e.target).length === 0)
+		{
+			$(calendar).find('.active').removeClass('active');
+			$(calendar).find('.calendar-row').removeClass('opened');
+		}
 	});
 
 	// header scroll

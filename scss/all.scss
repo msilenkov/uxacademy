@@ -591,6 +591,7 @@ h2 {
         .container {
             padding-top: 110px;
             padding-bottom: 30px;
+            display: block;
         }
         
         h2 {
@@ -633,8 +634,33 @@ h2 {
         height: auto;
         top: 0;
         left: 0;
+        display: block;
+        
+        &.opened {
+            .calendar-item {
+                display: none;
+                
+                &.active {
+                    display: block;
+                    height: auto;
+    
+                    .calendar-item__opener {
+                        display: none;
+                    }
+    
+                    .calendar-item__popup {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: auto;
+                    }
+                }
+            }
+        }
     }
 }
+
 
 .calendar-item {
     height: 33.3333%;
@@ -807,12 +833,28 @@ h2 {
     @include mq($until: desktop) {
         flex: 0 0 50%;
         height: 200px;
+        overflow: hidden;
+        
+        &:last-child {
+            .calendar-item__popup {
+                &-content {
+                    display: none;
+                }
+                
+                &-header {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
     
         &-header {
             margin-bottom: 30px;
         }
         
         &__popup {
+            display: block;
+            overflow: hidden;
+            
             &-item {
                 .time {
                     font-size: 18px;
@@ -830,6 +872,19 @@ h2 {
                 .teacher-name {
                     font-size: 18px;
                     line-height: 24px;
+                }
+            }
+            
+            &-header {
+                margin-bottom: 30px;
+                display: block;
+                
+                .ico {
+                    display: block;
+                }
+                
+                .text {
+                    padding-right: 0;
                 }
             }
         }
