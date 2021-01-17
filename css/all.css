@@ -366,8 +366,6 @@ h2 {
     .nav a.btn {
       display: -webkit-box;
       display: flex; }
-      .nav a.btn:after {
-        display: none; }
   @media all and (max-width: 1219px) {
     .nav li {
       margin-left: 20px; } }
