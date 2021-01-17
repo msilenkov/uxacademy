@@ -366,6 +366,8 @@ h2 {
     .nav a.btn {
       display: -webkit-box;
       display: flex; }
+      .nav a.btn:after {
+        display: none; }
   @media all and (max-width: 1219px) {
     .nav li {
       margin-left: 20px; } }
@@ -1683,13 +1685,11 @@ h2 {
       text-decoration: none; }
       .footer .copy a:hover {
         color: #000; }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 767px) {
     .footer .container {
-      padding-top: 110px;
-      padding-bottom: 50px;
       display: block; }
-    .footer h2 {
-      margin: 0 0 30px; } }
+    .footer .copy {
+      margin-bottom: 30px; } }
 
 .socials-list {
   display: -webkit-box;
@@ -1697,6 +1697,8 @@ h2 {
   flex-wrap: wrap; }
   .socials-list li {
     margin: 0 0 0 25px; }
+    .socials-list li:first-child {
+      margin-left: 0; }
   .socials-list a {
     border: 3px solid #808080;
     width: 52px;
