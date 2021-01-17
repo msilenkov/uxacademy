@@ -12,7 +12,7 @@
   font-style: normal;
   font-display: swap; }
 
-.nav ul, .intro .logo-list, .schedule, .bulleted-list, .teachers-list, .qa-list {
+.nav ul, .intro .logo-list, .schedule, .bulleted-list, .teachers-list, .qa-list, .socials-list {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -350,9 +350,22 @@ h2 {
     font-size: 20px;
     line-height: 28px;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0); }
-    .nav a:hover {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-top: 2px; }
+    .nav a:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      border-bottom: 1px solid rgba(0, 0, 0, 0); }
+    .nav a:hover:after {
       border-bottom: 1px solid black; }
+    .nav a.btn {
+      display: -webkit-box;
+      display: flex; }
   @media all and (max-width: 1219px) {
     .nav li {
       margin-left: 20px; } }
@@ -429,7 +442,7 @@ h2 {
       .intro .logo-list li:first-child {
         margin-left: 0; }
   .intro__content {
-    padding: 287px 0 50px; }
+    padding: 287px 0 90px; }
     .intro__content h1 {
       margin: 0 0 30px;
       max-width: 815px;
@@ -535,7 +548,7 @@ h2 {
     .btn-ico img {
       display: block; }
   .btn.btn-small {
-    padding: 13px 24px 12px; }
+    padding: 12px 24px 12px; }
     .btn.btn-small-text {
       margin-right: 14px; }
   .btn:hover .btn-ico {
@@ -1646,4 +1659,64 @@ h2 {
   @media all and (max-width: 1023px) {
     .video-box {
       height: 400px; } }
+
+.footer {
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
+  .footer .container {
+    padding: 51px 30px 50px;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+            justify-content: space-between; }
+  .footer .copy {
+    display: block;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000; }
+    .footer .copy a {
+      color: #808080;
+      text-decoration: none; }
+      .footer .copy a:hover {
+        color: #000; }
+  @media all and (max-width: 1023px) {
+    .footer .container {
+      padding-top: 110px;
+      padding-bottom: 50px;
+      display: block; }
+    .footer h2 {
+      margin: 0 0 30px; } }
+
+.socials-list {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap; }
+  .socials-list li {
+    margin: 0 0 0 25px; }
+  .socials-list a {
+    border: 3px solid #808080;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+    .socials-list a img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 90%;
+      max-height: 90%; }
+    .socials-list a:hover {
+      border-color: #000; }
 /*# sourceMappingURL=all.css.map */

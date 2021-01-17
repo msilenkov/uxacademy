@@ -240,10 +240,28 @@ h2 {
         font-size: 20px;
         line-height: 28px;
         text-decoration: none;
-        border-bottom: 1px solid rgba(0,0,0,0);
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        padding-top: 2px;
+        
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            border-bottom: 1px solid rgba(0,0,0,0);
+        }
         
         &:hover {
-            border-bottom: 1px solid rgba(0,0,0,1);
+            &:after {
+                border-bottom: 1px solid rgba(0,0,0,1);
+            }
+        }
+        
+        &.btn {
+            display: flex;
         }
     }
     
@@ -343,7 +361,7 @@ h2 {
     }
     
     &__content {
-        padding: 287px 0 50px;
+        padding: 287px 0 90px;
         
         h1 {
             margin: 0 0 30px;
@@ -498,7 +516,7 @@ h2 {
     }
     
     &.btn-small {
-        padding: 13px 24px 12px;
+        padding: 12px 24px 12px;
     
         &-text {
             margin-right: 14px;
@@ -1950,5 +1968,81 @@ h2 {
     
     @include mq($until: desktop) {
         height: 400px;
+    }
+}
+
+.footer {
+    background: var(--section-background);
+    position: relative;
+    z-index: 4;
+    
+    .container {
+        padding: 51px 30px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .copy {
+        display: block;
+        font-size: 20px;
+        line-height: 140%;
+        color: #000;
+        
+        a {
+            color: #808080;
+            text-decoration: none;
+            
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-top: 110px;
+            padding-bottom: 50px;
+            display: block;
+        }
+        
+        h2 {
+            margin: 0 0 30px;
+        }
+    }
+}
+
+.socials-list {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    
+    li {
+        margin: 0 0 0 25px;
+    }
+    
+    a {
+        border: 3px solid #808080;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        
+        img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        &:hover {
+            border-color: #000;
+        }
     }
 }
