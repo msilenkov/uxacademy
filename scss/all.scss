@@ -262,6 +262,10 @@ h2 {
         
         &.btn {
             display: flex;
+            
+            &:after {
+                display: none;
+            }
         }
     }
     
