@@ -766,7 +766,6 @@ h2 {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: all 0.3s;
         
         &-header {
             display: flex;
@@ -1666,4 +1665,188 @@ h2 {
 .scene--full {
     width: 100%;
     height: 100vh;
+}
+
+
+
+// qa
+.qa-section {
+    background: var(--section-background);
+    position: relative;
+    z-index: 4;
+    
+    .container {
+        padding: 105px 30px 125px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    h2 {
+        margin: 0 0 90px;
+    }
+    
+    p {
+        font-size: 24px;
+        line-height: 29px;
+        margin: 0 0 30px;
+        color: #000;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-top: 110px;
+            padding-bottom: 50px;
+            display: block;
+        }
+        
+        h2 {
+            margin: 0 0 30px;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+
+.qa-list {
+    @extend %listreset;
+    
+    li {
+        margin-bottom: 30px;
+    }
+    
+    .opener {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 300;
+        padding-right: 100px;
+        padding-bottom: 20px;
+        
+        &:after {
+            position: absolute;
+            top: 7px;
+            right: 0;
+            content: '';
+            background: url(../images/ico-opener.svg) no-repeat 0 0;
+            width: 29px;
+            height: 17px;
+            transition: all 0.3s;
+        }
+    }
+    
+    .holder {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    
+    .active {
+        .opener {
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+    
+    @include mq($until: desktop) {
+        .opener {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+}
+
+.contacts {
+    background: var(--section-background);
+    position: relative;
+    z-index: 4;
+    
+    .container {
+        padding: 105px 30px 125px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    h2 {
+        margin: 0 0 90px;
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-top: 110px;
+            padding-bottom: 50px;
+            display: block;
+        }
+        
+        h2 {
+            margin: 0 0 30px;
+        }
+    }
+}
+
+.video-section {
+    background: var(--section-background-blue);
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 105px 30px 100px;
+        position: relative;
+        z-index: 3;
+    }
+    
+    h2 {
+        margin-bottom: 50px;
+        color: #fff;
+    }
+    
+    p {
+        color: #fff;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 45px;
+        margin: 0 0 50px;
+    }
+    
+    @include mq($until: desktop) {
+        .container {
+            padding-bottom: 60px;
+            height: auto;
+            max-height: none;
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+        }
+        
+        p {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+}
+
+.video-box {
+    width: 100%;
+    height: 660px;
+    background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
+    
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+    
+    @include mq($until: desktop) {
+        height: 400px;
+    }
 }

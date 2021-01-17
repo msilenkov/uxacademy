@@ -12,7 +12,7 @@
   font-style: normal;
   font-display: swap; }
 
-.nav ul, .schedule, .bulleted-list, .teachers-list {
+.nav ul, .schedule, .bulleted-list, .teachers-list, .qa-list {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -754,9 +754,7 @@ h2 {
             flex-direction: column;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
+    pointer-events: none; }
     .calendar-item__popup-header {
       display: -webkit-box;
       display: flex;
@@ -1246,7 +1244,7 @@ h2 {
     -webkit-box-flex: 0;
             flex: 0 0 33.33333%; }
   .teachers-list__image {
-    height: 341px;
+    height: 236px;
     margin: 0 0 38px;
     background: -webkit-linear-gradient(202.82deg, #0066FF 19.44%, #160226 105.98%);
     background: linear-gradient(247.18deg, #0066FF 19.44%, #160226 105.98%); }
@@ -1446,4 +1444,139 @@ h2 {
 .scene--full {
   width: 100%;
   height: 100vh; }
+
+.qa-section {
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
+  .qa-section .container {
+    padding: 105px 30px 125px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+  .qa-section h2 {
+    margin: 0 0 90px; }
+  .qa-section p {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 0 30px;
+    color: #000; }
+    .qa-section p:last-child {
+      margin-bottom: 0; }
+  @media all and (max-width: 1023px) {
+    .qa-section .container {
+      padding-top: 110px;
+      padding-bottom: 50px;
+      display: block; }
+    .qa-section h2 {
+      margin: 0 0 30px; }
+    .qa-section p {
+      font-size: 18px;
+      line-height: 24px; } }
+
+.qa-list li {
+  margin-bottom: 30px; }
+
+.qa-list .opener {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 300;
+  padding-right: 100px;
+  padding-bottom: 20px; }
+  .qa-list .opener:after {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    content: '';
+    background: url(../images/ico-opener.svg) no-repeat 0 0;
+    width: 29px;
+    height: 17px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+
+.qa-list .holder {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.25); }
+
+.qa-list .active .opener:after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg); }
+
+@media all and (max-width: 1023px) {
+  .qa-list .opener {
+    font-size: 24px;
+    line-height: 30px; } }
+
+.contacts {
+  background: var(--section-background);
+  position: relative;
+  z-index: 4; }
+  .contacts .container {
+    padding: 105px 30px 125px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+  .contacts h2 {
+    margin: 0 0 90px; }
+  @media all and (max-width: 1023px) {
+    .contacts .container {
+      padding-top: 110px;
+      padding-bottom: 50px;
+      display: block; }
+    .contacts h2 {
+      margin: 0 0 30px; } }
+
+.video-section {
+  background: var(--section-background-blue); }
+  .video-section .container {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    padding: 105px 30px 100px;
+    position: relative;
+    z-index: 3; }
+  .video-section h2 {
+    margin-bottom: 50px;
+    color: #fff; }
+  .video-section p {
+    color: #fff;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 45px;
+    margin: 0 0 50px; }
+  @media all and (max-width: 1023px) {
+    .video-section .container {
+      padding-bottom: 60px;
+      height: auto;
+      max-height: none; }
+    .video-section h2 {
+      margin-bottom: 30px; }
+    .video-section p {
+      font-size: 24px;
+      line-height: 30px; } }
+
+.video-box {
+  width: 100%;
+  height: 660px;
+  background: -webkit-gradient(linear, right top, left top, from(#D9DDE1), to(#FFFFFF));
+  background: -webkit-linear-gradient(right, #D9DDE1 0%, #FFFFFF 100%);
+  background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%); }
+  .video-box iframe {
+    width: 100%;
+    height: 100%; }
+  @media all and (max-width: 1023px) {
+    .video-box {
+      height: 400px; } }
 /*# sourceMappingURL=all.css.map */
