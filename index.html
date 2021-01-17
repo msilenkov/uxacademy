@@ -87,6 +87,26 @@
                 </div>
             </div>
         </section>
+
+        <section class="intro">
+            <div class="container">
+                <style>.tinkoffPayRow{display:block;margin:1%;width:160px;}</style>
+<script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+<form name="TinkoffPayForm" onsubmit="pay(this); return false;">
+  <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="TinkoffBankTest">
+  <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
+  <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
+    <input class="tinkoffPayRow" type="text" placeholder="Сумма заказа" name="amount" required>
+    <input class="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order">
+    <input class="tinkoffPayRow" type="text" placeholder="Описание заказа" name="description">
+    <input class="tinkoffPayRow" type="text" placeholder="ФИО плательщика" name="name">
+    <input class="tinkoffPayRow" type="text" placeholder="E-mail" name="email">
+    <input class="tinkoffPayRow" type="text" placeholder="Контактный телефон" name="phone">
+    <input class="tinkoffPayRow" type="submit" value="Оплатить">
+</form>
+            </div>
+        </section>
+        
         <section class="community-section" id="community">
             <div class="container">
                 <h2>Сообщество академии в Фейсбуке</h2>
@@ -1239,7 +1259,6 @@
                 <h3>Курс разработан для проектировщиков интерфейсов, мобильных приложений и сервисов, а также будет полезен маркетологам стартаперам и венчурным бизнесменам, менеджерам цифровых проектов.</h3>
             </div>
         </section>
-
         <section class="qa-section">
             <div class="container">
                 <h2>Часто задаваемые вопросы</h2>
