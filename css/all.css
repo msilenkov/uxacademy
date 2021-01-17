@@ -12,7 +12,7 @@
   font-style: normal;
   font-display: swap; }
 
-.nav ul, .schedule, .bulleted-list, .teachers-list, .qa-list {
+.nav ul, .intro .logo-list, .schedule, .bulleted-list, .teachers-list, .qa-list {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -254,8 +254,8 @@ h2 {
     .header .logo img {
       display: block;
       width: auto;
-      height: 117px;
-      margin: -31px 0;
+      height: 96px;
+      margin: -20px 0;
       -webkit-transition: -webkit-transform 0.3s;
       transition: -webkit-transform 0.3s;
       transition: transform 0.3s;
@@ -339,17 +339,23 @@ h2 {
   .nav ul {
     display: -webkit-box;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center; }
   .nav li {
     margin-left: 35px; }
   .nav a {
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 20px;
+    line-height: 28px;
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0); }
     .nav a:hover {
       border-bottom: 1px solid black; }
+  @media all and (max-width: 1219px) {
+    .nav li {
+      margin-left: 20px; } }
   @media all and (max-width: 1023px) {
     .nav {
       position: absolute;
@@ -390,23 +396,63 @@ h2 {
     flex-wrap: wrap;
     -webkit-box-align: center;
             align-items: center; }
+  .intro .contact-row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+            align-items: center; }
+    .intro .contact-row .btn {
+      margin-right: 25px; }
+  .intro .phone-info {
+    display: block;
+    color: #000;
+    font-size: 20px;
+    line-height: 28px; }
+    .intro .phone-info a {
+      text-decoration: none; }
+  .intro .logo-list {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+            align-items: center; }
+    .intro .logo-list a {
+      text-decoration: none; }
+    .intro .logo-list img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      display: block; }
+    .intro .logo-list li {
+      margin-left: 72px; }
+      .intro .logo-list li:first-child {
+        margin-left: 0; }
   .intro__content {
     padding: 287px 0 50px; }
     .intro__content h1 {
-      margin: 0 0 50px;
+      margin: 0 0 30px;
       max-width: 815px;
       font-size: 52px;
       font-weight: 300;
       line-height: 62px; }
+    .intro__content p {
+      margin: 0 0 46px;
+      max-width: 750px;
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 38px; }
+      .intro__content p a {
+        text-decoration: none;
+        border-bottom: 2px solid #000; }
+        .intro__content p a:hover {
+          border-bottom: 2px solid rgba(0, 0, 0, 0); }
   .intro__footer-text {
     -webkit-box-flex: 1;
             flex: 1 0 0;
     font-weight: 300;
     font-size: 32px;
     line-height: 38px; }
-    .intro__footer-text p {
-      margin: 0;
-      max-width: 750px; }
     .intro__footer-text a {
       text-decoration: none;
       border-bottom: 2px solid #000; }
@@ -435,6 +481,10 @@ h2 {
         line-height: 34px;
         margin: 0 0 20px;
         font-weight: 400; }
+      .intro__content p {
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 30px; }
     .intro .container {
       padding-bottom: 40px; }
     .intro__footer {
@@ -447,6 +497,14 @@ h2 {
       height: 30px;
       width: auto; } }
   @media all and (max-width: 767px) {
+    .intro .contact-row {
+      display: block; }
+    .intro .phone-info {
+      padding-top: 20px; }
+    .intro .logo-list {
+      display: block; }
+      .intro .logo-list li {
+        margin: 0 0 30px; }
     .intro .container {
       min-height: auto;
       display: block; }
@@ -460,23 +518,26 @@ h2 {
   flex-wrap: wrap;
   -webkit-box-align: center;
           align-items: center;
-  padding: 20px 40px 19px;
+  padding: 18px 30px 17px;
   background: #FFFFFF;
-  border: 3px solid #021526;
+  border: 3px solid #021526 !important;
   text-decoration: none; }
   .btn-text {
     display: block;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 140%;
+    font-size: 20px;
+    line-height: 28px;
     color: #000000;
-    margin-right: 37px; }
+    margin-right: 25px; }
   .btn-ico {
     display: block;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
     .btn-ico img {
       display: block; }
+  .btn.btn-small {
+    padding: 13px 24px 12px; }
+    .btn.btn-small-text {
+      margin-right: 14px; }
   .btn:hover .btn-ico {
     -webkit-transform: translate(10px, 0);
             transform: translate(10px, 0); }
@@ -487,7 +548,9 @@ h2 {
       .btn-text span {
         display: none; }
       .btn-ico img {
-        height: 22px; } }
+        height: 22px; }
+      .btn.btn-small {
+        height: auto; } }
 
 .community-section {
   background: var(--section-background-blue);
@@ -1244,11 +1307,15 @@ h2 {
     -webkit-box-flex: 0;
             flex: 0 0 33.33333%; }
   .teachers-list__image {
-    height: 236px;
+    position: relative;
     margin: 0 0 38px;
     background: -webkit-linear-gradient(202.82deg, #0066FF 19.44%, #160226 105.98%);
-    background: linear-gradient(247.18deg, #0066FF 19.44%, #160226 105.98%); }
+    background: linear-gradient(247.18deg, #0066FF 19.44%, #160226 105.98%);
+    padding-top: 100%; }
     .teachers-list__image img {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: block;
       width: 100%;
       height: 100%;

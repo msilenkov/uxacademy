@@ -109,8 +109,8 @@ h2 {
         img {
             display: block;
             width: auto;
-            height: 117px;
-            margin: -31px 0;
+            height: 96px;
+            margin: -20px 0;
             transition: transform 0.3s;
             transform-origin: 0 50%;
         }
@@ -228,6 +228,8 @@ h2 {
         @extend %listreset;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
     
     li {
@@ -235,14 +237,19 @@ h2 {
     }
     
     a {
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 34px;
+        font-size: 20px;
+        line-height: 28px;
         text-decoration: none;
         border-bottom: 1px solid rgba(0,0,0,0);
         
         &:hover {
             border-bottom: 1px solid rgba(0,0,0,1);
+        }
+    }
+    
+    @include mq($until: widescreen) {
+        li {
+            margin-left: 20px;
         }
     }
     
@@ -288,15 +295,79 @@ h2 {
         align-items: center;
     }
     
+    .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        
+        .btn {
+            margin-right: 25px;
+        }
+    }
+    
+    .phone-info {
+        display: block;
+        color: #000;
+        font-size: 20px;
+        line-height: 28px;
+        
+        a {
+            text-decoration: none;
+        }
+    }
+    
+    .logo-list {
+        @extend %listreset;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        
+        a {
+            text-decoration: none;
+        }
+    
+        img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+        
+        li {
+            margin-left: 72px;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+    
     &__content {
         padding: 287px 0 50px;
         
         h1 {
-            margin: 0 0 50px;
+            margin: 0 0 30px;
             max-width: 815px;
             font-size: 52px;
             font-weight: 300;
             line-height: 62px;
+        }
+    
+        p {
+            margin: 0 0 46px;
+            max-width: 750px;
+            font-weight: 300;
+            font-size: 32px;
+            line-height: 38px;
+    
+            a {
+                text-decoration: none;
+                border-bottom: 2px solid #000;
+        
+                &:hover {
+                    border-bottom: 2px solid rgba(0,0,0,0);
+                }
+            }
         }
     }
     
@@ -305,11 +376,6 @@ h2 {
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
-        
-        p {
-            margin: 0;
-            max-width: 750px;
-        }
         
         a {
             text-decoration: none;
@@ -347,6 +413,12 @@ h2 {
                 margin: 0 0 20px;
                 font-weight: 400;
             }
+            
+            p {
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: 30px;
+            }
         }
         
         .container {
@@ -372,6 +444,21 @@ h2 {
     }
     
     @include mq($until: tablet) {
+        .contact-row {
+            display: block;
+        }
+        
+        .phone-info {
+            padding-top: 20px;
+        }
+        
+        .logo-list {
+            display: block;
+            
+            li {
+                margin: 0 0 30px;
+            }
+        }
         .container {
             min-height: auto;
             display: block;
@@ -388,18 +475,17 @@ h2 {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px 40px 19px;
+    padding: 18px 30px 17px;
     background: #FFFFFF;
-    border: 3px solid #021526;
+    border: 3px solid #021526 !important;
     text-decoration: none;
     
     &-text {
         display: block;
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 140%;
+        font-size: 20px;
+        line-height: 28px;
         color: #000000;
-        margin-right: 37px;
+        margin-right: 25px;
     }
     
     &-ico {
@@ -408,6 +494,14 @@ h2 {
         
         img {
             display: block;
+        }
+    }
+    
+    &.btn-small {
+        padding: 13px 24px 12px;
+    
+        &-text {
+            margin-right: 14px;
         }
     }
     
@@ -431,6 +525,10 @@ h2 {
             img {
                 height: 22px;
             }
+        }
+        
+        &.btn-small {
+            height: auto;
         }
     }
 }
@@ -1414,11 +1512,15 @@ h2 {
     }
     
     &__image {
-        height: 236px;
+        position: relative;
         margin: 0 0 38px;
         background: linear-gradient(247.18deg, #0066FF 19.44%, #160226 105.98%);
+        padding-top: 100%;
         
         img {
+            position: absolute;
+            top: 0;
+            left: 0;
             display: block;
             width: 100%;
             height: 100%;
