@@ -86,7 +86,6 @@
                     </div>
                 </div>
             </div>
-
         <section class="community-section" id="community">
             <div class="container">
                 <h2>Сообщество академии в Фейсбуке</h2>
@@ -1288,6 +1287,23 @@
             <iframe src="https://uxacademy.ru" class="contacts-frame" frameborder="0" width="100%"
                 height="600"></iframe>
         </section>
+
+
+<style>.tinkoffPayRow{display:block;margin:1%;width:160px;}</style>
+<script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+<form name="TinkoffPayForm" onsubmit="pay(this); return false;">
+  <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="TinkoffBankTest">
+  <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
+  <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
+    <input class="tinkoffPayRow" type="hidden" placeholder="Сумма заказа" name="amount" value="35000">
+    <input class="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" value="">
+    <input class="tinkoffPayRow" type="hidden" placeholder="Описание заказа" name="description" value="Оплата места на интенсиве по Продуктовому дизайну UX/UI на Флаконе с 18 по 26 февраля">
+    <input class="tinkoffPayRow" type="text" placeholder="Ваше имя" name="name">
+    <input class="tinkoffPayRow" type="text" placeholder="E-mail" name="email">
+    <input class="tinkoffPayRow" type="text" placeholder="Контактный телефон" name="phone">
+    <input class="tinkoffPayRow" type="submit" value="Оплатить">
+</form>
+        
         <footer class="footer">
             <div class="container">
                 <span class="copy">UX Академия, 2020.<br><a href=""#>Пользовательское соглашение</a></span>
