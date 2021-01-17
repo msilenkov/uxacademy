@@ -2000,15 +2000,13 @@ h2 {
         }
     }
     
-    @include mq($until: desktop) {
+    @include mq($until: tablet) {
         .container {
-            padding-top: 110px;
-            padding-bottom: 50px;
             display: block;
         }
         
-        h2 {
-            margin: 0 0 30px;
+        .copy {
+            margin-bottom: 30px;
         }
     }
 }
@@ -2020,6 +2018,10 @@ h2 {
     
     li {
         margin: 0 0 0 25px;
+        
+        &:first-child {
+            margin-left: 0;
+        }
     }
     
     a {
