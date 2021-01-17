@@ -77,7 +77,16 @@ $(function() {
 				$(calendar).find('.calendar-row').removeClass('opened');
 			}
 
-			$(calendar).find('.active').next().addClass('active');
+			$(calendar).find('.active').removeClass('active').next().addClass('active');
+		}
+
+		if(e.keyCode === 37) {
+			if($(calendar).find('.active').is(':first-child')) {
+				$(calendar).find('.active').removeClass('active');
+				$(calendar).find('.calendar-row').removeClass('opened');
+			}
+
+			$(calendar).find('.active').removeClass('active').prev().addClass('active');
 		}
 	});
 

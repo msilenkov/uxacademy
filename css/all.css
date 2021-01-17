@@ -754,9 +754,7 @@ h2 {
             flex-direction: column;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
+    pointer-events: none; }
     .calendar-item__popup-header {
       display: -webkit-box;
       display: flex;
