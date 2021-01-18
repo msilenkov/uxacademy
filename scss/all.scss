@@ -14,6 +14,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Graphik LC';
+    src: url('../fonts/GraphikLC-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 $mq-breakpoints: (
     // Base device classes
     mobile:      321px,
@@ -262,6 +270,10 @@ h2 {
         
         &.btn {
             display: flex;
+            
+            &:after {
+                display: none;
+            }
         }
     }
     
@@ -1350,6 +1362,82 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     
+    .card-opener {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .card-popup {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
+        padding: 36px 39px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s;
+        
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .card-back {
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 54px;
+            font-size: 32px;
+            line-height: 38px;
+            text-decoration: none;
+            background: url(../images/ico-back.svg) no-repeat 0 50% / 36px 32px;
+            margin-bottom: 20px;
+        }
+        
+        .text {
+            width: 100%;
+            max-width: 317px;
+            display: block;
+            border: 0;
+            border-bottom: 1px solid rgba(2, 21, 38,0.25);
+            font-size: 32px;
+            font-weight: 300;
+            color: #021526;
+            height: 38px;
+            margin-bottom: 20px;
+            background: none;
+            padding: 0;
+        }
+        
+        .submit {
+            display: block;
+            border: 0;
+            padding: 0;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            cursor: pointer;
+            background: none;
+        }
+        
+        .bank-logo {
+            position: absolute;
+            bottom: 40px;
+            right: 39px;
+            
+            img {
+                display: block;
+            }
+        }
+    }
+    
     &__card {
         width: 586px;
         height: 339px;
@@ -1357,9 +1445,7 @@ h2 {
         padding: 11px 30px 29px;
         margin: 0 55px 0 0;
         color: #000;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        position: relative;
         
         .price {
             display: block;
@@ -1428,12 +1514,38 @@ h2 {
     @include mq($until: tablet) {
         &__card {
             width: 100%;
-            height: 185px;
-            padding: 11px 30px 20px;
+            height: 260px;
+            padding: 11px 20px 20px;
     
             .price {
                 font-size: 47px;
                 line-height: 74px;
+            }
+        }
+    
+        .card-popup {
+            padding: 20px 20px;
+    
+            .card-back {
+                font-size: 18px;
+                line-height: 22px;
+                padding-left: 45px;
+                background-size: auto 24px;
+            }
+            
+            .bank-logo {
+                display: none;
+            }
+            
+            .text {
+                font-size: 24px;
+                height: 26px;
+                margin-bottom: 20px;
+            }
+            
+            .submit {
+                font-size: 24px;
+                line-height: 30px;
             }
         }
     
@@ -2025,9 +2137,6 @@ h2 {
     }
     
     a {
-        border: 3px solid #808080;
-        width: 52px;
-        height: 52px;
         border-radius: 50%;
         display: flex;
         flex-wrap: wrap;
@@ -2037,14 +2146,6 @@ h2 {
         
         img {
             display: block;
-            width: auto;
-            height: auto;
-            max-width: 90%;
-            max-height: 90%;
-        }
-        
-        &:hover {
-            border-color: #000;
         }
     }
 }

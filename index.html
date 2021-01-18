@@ -86,6 +86,7 @@
                     </div>
                 </div>
             </div>
+        </section>
         <section class="community-section" id="community">
             <div class="container">
                 <h2>Сообщество академии в Фейсбуке</h2>
@@ -1165,11 +1166,25 @@
                 <h2>Стоимость обучения на интенсиве</h2>
                 <div class="price-content">
                     <div class="price-content__card">
-                        <span class="price">35 000 ₽</span>
-                        <div class="price-content__footer">
-                            <span class="text">В учебном центре<br>на Флаконе</span>
-                            <span class="ico">
-                                <img src="images/arrow-card.svg" alt="">
+                        <a href="#" class="card-opener">
+                            <span class="price">35 000 ₽</span>
+                            <div class="price-content__footer">
+                                <span class="text">В учебном центре<br>на Флаконе</span>
+                                <span class="ico">
+                                    <img src="images/arrow-card.svg" alt="">
+                                </span>
+                            </div>
+                        </a>
+                        <div class="card-popup">
+                            <a href="#" class="card-back">1 билет на курс за 35 000 ₽</a>
+                            <form action="#">
+                                <input type="text" class="text" placeholder="Ваше имя">
+                                <input type="email" class="text" placeholder="E-mail">
+                                <input type="text" class="text phone-mask" placeholder="+7 900 000 00 00">
+                                <button class="submit" type="button">Перейти к оплате</button>
+                            </form>
+                            <span class="bank-logo">
+                                <img src="images/bank-logo.svg" alt="">
                             </span>
                         </div>
                     </div>
@@ -1282,14 +1297,14 @@
                         <div class="slide">
                             <div class="holder">
                                 <p>Работа над проектом в составе команды в первый день интенсива вы:<br>
-                            1) получаете брифы,<br> 
-                            2) выбираете наиболее интересный,<br> 
+                            1) получаете брифы,<br>
+                            2) выбираете наиболее интересный,<br>
                             3) разбиваетесь на команды<br>
                             4) готовите решение к защите.<br>
                             Финальным результатом станет прототип и продуктовая страница, презентующая решение.</p>
                             </div>
                         </div>
-                    </li>    
+                    </li>
                     <li>
                         <a href="#" class="opener">Его нужно будет реализовывать самостоятельно или можно объединяться в группы с другими участниками интенсива?</a>
                         <div class="slide">
@@ -1297,7 +1312,7 @@
                                 <p>Курс по строен в формате Peer 2 Peer, что предусматривает командную работу. В процессе реальной продуктовой разработки результат построен именно на построении качественного взаимодействия специалистов друг с другом.</p>
                             </div>
                         </div>
-                    </li>    
+                    </li>
                     <li>
                         <a href="#" class="opener">Какие есть способы и варианты оплаты обучения?</a>
                         <div class="slide">
@@ -1305,7 +1320,7 @@
                                 <p>Оплата возможна через форму на сайте через биллинг провайдера Тинькофф Банк.</p>
                             </div>
                         </div>
-                    </li>    
+                    </li>
                     <li>
                         <a href="#" class="opener">Будет ли мне полезен интенсив, если я только начинаю развиваться в дизайне?</a>
                         <div class="slide">
@@ -1313,11 +1328,11 @@
                                 <p>Конечно. Вы получите работу в портфолио.</p>
                             </div>
                         </div>
-                    </li>    
+                    </li>
                 </ul>
             </div>
         </section>
-<!--         <section class="video-section">
+        <section class="video-section">
             <div class="container">
                 <h2>Защита курса UX/UI на Флаконе при партнерстве Британской высшей школой дизайна, 2020 г.
                 </h2>
@@ -1327,21 +1342,21 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-        </section> -->
-<!--         <section class="contacts">
+        </section>
+        <section class="contacts">
             <iframe src="https://uxacademy.ru" class="contacts-frame" frameborder="0" width="100%"
                 height="600"></iframe>
-        </section> -->
-<!--         <footer class="footer">
+        </section>
+        <footer class="footer">
             <div class="container">
                 <span class="copy">UX Академия, 2020.<br><a href=""#>Пользовательское соглашение</a></span>
                 <ul class="socials-list">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#"><img src="images/ico-social.svg" alt="" width="52" height="52"></a></li>
+                    <li><a href="#"><img src="images/ico-social.svg" alt="" width="52" height="52"></a></li>
+                    <li><a href="#"><img src="images/ico-social.svg" alt="" width="52" height="52"></a></li>
                 </ul>
             </div>
-        </footer> -->
+        </footer>
     </div>
 
     <canvas class="scene scene--full js-background" id="scene1"></canvas>
@@ -1353,6 +1368,7 @@
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollToPlugin.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/demo6.js"></script>

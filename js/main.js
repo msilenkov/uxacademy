@@ -148,6 +148,16 @@ $(function() {
 				`);
 		}
 	});
+
+	//input mask
+	Inputmask({"mask": "+7 999 999 99 99"}).mask('.phone-mask');
+
+	//card
+	$('.card-opener, .card-back').on('click', function(e){
+		e.preventDefault();
+
+		$('.card-popup').toggleClass('active');
+	});
 });
 
 
