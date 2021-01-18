@@ -158,6 +158,31 @@ $(function() {
 
 		$('.card-popup').toggleClass('active');
 	});
+
+	//form
+	let contactForm = document.getElementById('contact-form');
+
+	$( "#contact-form" ).submit(function(e) {
+		let formData = new FormData(contactForm);
+		console.log(e.target.action);
+		e.preventDefault();
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: formData
+		})
+			.then(() => {
+				$('#success').addClass('active');
+			})
+			.catch(() => {
+				alert('failed');
+			});
+	});
+
+	$('#success .thanks').on('click', function(){
+		$('#success').removeClass('active');
+		$('#contact-form input').val('');
+	});
 });
 
 

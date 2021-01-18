@@ -1272,7 +1272,15 @@ h2 {
     background: -webkit-gradient(linear, right top, left top, from(#D9DDE1), to(#FFFFFF));
     background: -webkit-linear-gradient(right, #D9DDE1 0%, #FFFFFF 100%);
     background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
-    display: none; }
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+    .price-content .card-form-success.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto; }
     .price-content .card-form-success h3 {
       font-size: 32px;
       line-height: 38px;

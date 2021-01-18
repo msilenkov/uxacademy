@@ -1449,7 +1449,16 @@ h2 {
         flex-direction: column;
         padding: 36px 39px 33px;
         background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s;
+        
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
         
         h3 {
             font-size: 32px;
