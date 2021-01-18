@@ -28,22 +28,6 @@
 
     <link rel="stylesheet" href="css/jquery.fancybox.css" media="all">
     <link rel="stylesheet" href="css/all.css" media="all">
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(71299294, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/71299294" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -1193,7 +1177,7 @@
                         </a>
                         <div class="card-popup">
                             <a href="#" class="card-back">Бронь на 1 билет за 35 000 ₽</a>
-                            <form name="Сontact" netlify action="/">
+                            <form name="Сontact" netlify action>
                                 <input type="text" class="text" name="name" placeholder="Ваше имя" required>
                                 <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
                                 <input type="text" class="text phone-mask" name="phone" placeholder="+7 999 000 00 00" required>
@@ -1399,5 +1383,32 @@
     <script src="js/main.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/demo6.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(71299294, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/71299294" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Load Facebook SDK for JavaScript --> 
+    <div id="fb-root">
+    </div> 
+        <script> window.fbAsyncInit = function() { FB.init({ xfbml            : true, version          : 'v9.0' }); }; (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/ru_RU/sdk/xfbml.customerchat.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+        </script> 
+
+<!-- Your Chat Plugin code --> 
+    <div class="fb-customerchat" attribution=setup_tool page_id="2329143790692855" theme_color="#000000" logged_in_greeting="Здравствуйте! Как мы можем вам помочь?" logged_out_greeting="Здравствуйте! Как мы можем вам помочь?"> 
+    </div>
+
 </body>
 </html>
