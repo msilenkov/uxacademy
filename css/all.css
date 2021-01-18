@@ -399,7 +399,7 @@ h2 {
         margin: 0 0 20px; } }
 
 .intro {
-  background: var(--section-background);
+  background: url(../images/img-XL/img-intro-bg.jpg) no-repeat 50% 50%/cover;
   position: relative;
   z-index: 4; }
   .intro .container {
