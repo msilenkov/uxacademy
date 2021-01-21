@@ -440,14 +440,14 @@ h2 {
             
             h1 {
                 font-size: 32px;
-                line-height: 34px;
-                margin: 0 0 20px;
+                line-height: 38px;
+                margin: 0 0 30px;
                 font-weight: 400;
             }
             
             p {
-                font-size: 24px;
-                line-height: 29px;
+                font-size: 20px;
+                line-height: 28px;
                 margin-bottom: 30px;
             }
         }
@@ -457,16 +457,19 @@ h2 {
         }
         
         &__footer {
-            display: block;
+            flex-direction: column;
+            align-items: flex-start;
         }
     
         &__footer-text {
             font-size: 24px;
             line-height: 29px;
-            margin-bottom: 30px;
         }
     
         &__footer-logo {
+            order: -1;
+            margin-bottom: 50px;
+            
             img {
                 height: 30px;
                 width: auto;
@@ -481,23 +484,37 @@ h2 {
         
         .phone-info {
             padding-top: 20px;
+            display: none;
         }
         
         .logo-list {
-            display: block;
+            margin-right: -20px;
             
             li {
-                margin: 0 0 30px;
+                margin: 0 20px 0 0;
+                width: calc(50% - 20px);
+            }
+            
+            img {
+                max-width: 100%;
+                max-height: 36px;
             }
         }
         .container {
             min-height: auto;
             display: block;
+            padding-bottom: 30px;
         }
     
         &__content {
             display: block;
             overflow: hidden;
+    
+            .btn {
+                width: 100%;
+                max-width: 400px;
+                justify-content: space-between;
+            }
         }
     }
 }
@@ -1541,6 +1558,14 @@ h2 {
     
         &__card {
             margin-bottom: 30px;
+    
+            &:hover {
+                .price-content__footer {
+                    .ico {
+                        transform: translate(0px, 0);
+                    }
+                }
+            }
         }
     
         &__footer {
@@ -1590,7 +1615,7 @@ h2 {
     
             .card-back {
                 font-size: 18px;
-                line-height: 22px;
+                line-height: 24px;
                 padding-left: 45px;
                 background-size: auto 24px;
             }
@@ -1742,10 +1767,10 @@ h2 {
     }
     
     @include mq($until: widescreen) {
-        margin: 0 -15px -30px;
+        margin: 0 -15px -60px;
         
         li {
-            padding: 0 15px 30px;
+            padding: 0 15px 60px;
         }
     }
     
@@ -2211,3 +2236,107 @@ h2 {
         }
     }
 }
+
+.subscribe-section {
+    background: linear-gradient(243.17deg, #0038FF 0%, #FF6B00 132.26%);
+    position: relative;
+    z-index: 3;
+    
+    .container {
+        padding-top: 105px;
+        padding-bottom: 105px;
+    }
+    
+    h2 {
+        margin: 0 0 50px;
+        max-width: 987px;
+        font-size: 52px;
+        line-height: 62px;
+        color: #fff;
+    }
+    
+    @include mq($until: desktop) {
+        h2 {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.subscribe-form {
+    max-width: 738px;
+    position: relative;
+    
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .text {
+        font-size: 24px;
+        line-height: 29px;
+        background: #fff;
+        border: 0;
+        display: block;
+        width: 50%;
+        padding: 0 30px;
+        height: 68px;
+    }
+    
+    .submit {
+        display: block;
+        border: 0;
+        width: 50%;
+        color: #fff;
+        font-size: 24px;
+        line-height: 120%;
+        background: #0D2B80;
+        cursor: pointer;
+        transition: all 0.3s;
+        height: 68px;
+        
+        &:hover {
+            background: lighten(#0D2B80, 5%);
+        }
+    }
+    
+    .thanks {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        max-width: 741px;
+        font-size: 52px;
+        line-height: 62px;
+        font-weight: 300;
+        color: #fff;
+        display: none;
+    }
+    
+    @include mq($until: desktop) {
+        .thanks {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+    
+    @include mq($until: tablet) {
+        &__row {
+            display: block;
+        }
+        
+        .text {
+            width: 100%;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .submit {
+            width: 100%;
+            font-size: 20px;
+        }
+    }
+}
+

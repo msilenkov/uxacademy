@@ -500,39 +500,57 @@ h2 {
       padding: 150px 0 40px; }
       .intro__content h1 {
         font-size: 32px;
-        line-height: 34px;
-        margin: 0 0 20px;
+        line-height: 38px;
+        margin: 0 0 30px;
         font-weight: 400; }
       .intro__content p {
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 20px;
+        line-height: 28px;
         margin-bottom: 30px; }
     .intro .container {
       padding-bottom: 40px; }
     .intro__footer {
-      display: block; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      -webkit-box-align: start;
+              align-items: flex-start; }
     .intro__footer-text {
       font-size: 24px;
-      line-height: 29px;
-      margin-bottom: 30px; }
-    .intro__footer-logo img {
-      height: 30px;
-      width: auto; } }
+      line-height: 29px; }
+    .intro__footer-logo {
+      -webkit-box-ordinal-group: 0;
+              order: -1;
+      margin-bottom: 50px; }
+      .intro__footer-logo img {
+        height: 30px;
+        width: auto; } }
   @media all and (max-width: 767px) {
     .intro .contact-row {
       display: block; }
     .intro .phone-info {
-      padding-top: 20px; }
+      padding-top: 20px;
+      display: none; }
     .intro .logo-list {
-      display: block; }
+      margin-right: -20px; }
       .intro .logo-list li {
-        margin: 0 0 30px; }
+        margin: 0 20px 0 0;
+        width: calc(50% - 20px); }
+      .intro .logo-list img {
+        max-width: 100%;
+        max-height: 36px; }
     .intro .container {
       min-height: auto;
-      display: block; }
+      display: block;
+      padding-bottom: 30px; }
     .intro__content {
       display: block;
-      overflow: hidden; } }
+      overflow: hidden; }
+      .intro__content .btn {
+        width: 100%;
+        max-width: 400px;
+        -webkit-box-pack: justify;
+                justify-content: space-between; } }
 
 .btn {
   display: -webkit-inline-box;
@@ -1346,6 +1364,9 @@ h2 {
       margin-bottom: 0; }
       .price-content__card {
         margin-bottom: 30px; }
+        .price-content__card:hover .price-content__footer .ico {
+          -webkit-transform: translate(0px, 0);
+                  transform: translate(0px, 0); }
       .price-content__footer .text {
         font-weight: 300;
         font-size: 24px;
@@ -1375,7 +1396,7 @@ h2 {
       padding: 20px; }
       .price-content .card-popup .card-back {
         font-size: 18px;
-        line-height: 22px;
+        line-height: 24px;
         padding-left: 45px;
         background-size: auto 24px; }
       .price-content .card-popup .bank-logo {
@@ -1487,9 +1508,9 @@ h2 {
     opacity: 0.5; }
   @media all and (max-width: 1219px) {
     .teachers-list {
-      margin: 0 -15px -30px; }
+      margin: 0 -15px -60px; }
       .teachers-list li {
-        padding: 0 15px 30px; } }
+        padding: 0 15px 60px; } }
   @media all and (max-width: 1023px) {
     .teachers-list li {
       -webkit-box-flex: 0;
@@ -1846,4 +1867,82 @@ h2 {
     transition: all 0.3s; }
     .socials-list a img {
       display: block; }
+
+.subscribe-section {
+  background: -webkit-linear-gradient(206.83deg, #0038FF 0%, #FF6B00 132.26%);
+  background: linear-gradient(243.17deg, #0038FF 0%, #FF6B00 132.26%);
+  position: relative;
+  z-index: 3; }
+  .subscribe-section .container {
+    padding-top: 105px;
+    padding-bottom: 105px; }
+  .subscribe-section h2 {
+    margin: 0 0 50px;
+    max-width: 987px;
+    font-size: 52px;
+    line-height: 62px;
+    color: #fff; }
+  @media all and (max-width: 1023px) {
+    .subscribe-section h2 {
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 30px; } }
+
+.subscribe-form {
+  max-width: 738px;
+  position: relative; }
+  .subscribe-form__row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap; }
+  .subscribe-form .text {
+    font-size: 24px;
+    line-height: 29px;
+    background: #fff;
+    border: 0;
+    display: block;
+    width: 50%;
+    padding: 0 30px;
+    height: 68px; }
+  .subscribe-form .submit {
+    display: block;
+    border: 0;
+    width: 50%;
+    color: #fff;
+    font-size: 24px;
+    line-height: 120%;
+    background: #0D2B80;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    height: 68px; }
+    .subscribe-form .submit:hover {
+      background: #0f3397; }
+  .subscribe-form .thanks {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    width: 100%;
+    max-width: 741px;
+    font-size: 52px;
+    line-height: 62px;
+    font-weight: 300;
+    color: #fff;
+    display: none; }
+  @media all and (max-width: 1023px) {
+    .subscribe-form .thanks {
+      font-size: 30px;
+      line-height: 36px; } }
+  @media all and (max-width: 767px) {
+    .subscribe-form__row {
+      display: block; }
+    .subscribe-form .text {
+      width: 100%;
+      font-size: 20px;
+      margin-bottom: 15px; }
+    .subscribe-form .submit {
+      width: 100%;
+      font-size: 20px; } }
 /*# sourceMappingURL=all.css.map */
