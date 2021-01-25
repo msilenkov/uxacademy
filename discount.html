@@ -56,7 +56,7 @@
                         <div class="card-popup">
                             <a href="#" class="card-back">Покупка билета за 28 000 ₽ </a>
                             <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
-                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;" action netlify>
+                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;">
 
                                 <input type="name" 
                                        class="text" 
@@ -94,7 +94,7 @@
                                 <input class="tinkoffPayRow" 
                                        type="hidden"
                                        name="amount"
-                                       value="1" 
+                                       value="2" 
                                        required>
 
                                 <input class="tinkoffPayRow" 
@@ -103,8 +103,9 @@
                                        value="Покупка билета на интенсив по продуктовому дизайну UX/UI от Ярослава Шуваева с 18 по 26 февраля">
 
                                 <button class="submit" 
-                                        onclick="textMsg('Спасибо, что нажали на ссылку!')" 
                                         type="submit">Оплатить участие</button>
+
+
                             </form>
                             <span class="bank-logo">
                                 <img src="images/bank-logo.svg" alt="">
