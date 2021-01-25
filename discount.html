@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:og="http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Meta data-->
+    <link rel="canonical" href="https://flacon.uxacademy.ru/">
+    <meta name="description" content="Курс по продуктовому дизайну UX/UI дизайн">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://flacon.uxacademy.ru/discount">
+    <meta property="og:type" content="discount">
+    <meta property="og:title" content="UX Академия на Флаконе">
+    <meta property="og:description" content="Курс по продуктовому дизайну UX/UI дизайн">
+    <meta property="og:image" content="https://github.com/msilenkov/uxacademy/blob/main/images/meta/social.png?raw=true">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://flacon.uxacademy.ru/discount">
+    <meta property="twitter:url" content="https://flacon.uxacademy.ru/discount/">
+    <meta name="twitter:title" content="UX Академия на Флаконе">
+    <meta name="twitter:description" content="Курс по продуктовому дизайну UX/UI дизайн">
+    <meta name="twitter:image" content="https://github.com/msilenkov/uxacademy/blob/main/images/meta/social.png?raw=true">
+
+    <title>UX Академия</title>
+
+    <link rel="stylesheet" href="css/jquery.fancybox.css" media="all">
+    <link rel="stylesheet" href="css/all.css" media="all">
+</head>
+
+<body>
+    <div class="page">
+        <section class="psd" id="price">
+            <div class="container">
+                <span class="note"><a href="http://flacon.uxacademy.ru">На сайт академии</a></span><br>
+                    <h2>Интенсив по продуктовому дизайну UX/UI<br/>от Ярослава Шуваева c 18 по 26 февраля</h2>
+                <span class="note">
+                    <span class="block">Скидка 20% для участников вебинара<b><br>Как планировать релизы продуктов основанных на искусственном интеллекте (AI) или незримо встроенных в физическую среду (Phygital)?</b>
+                    </span>
+                </span>
+                <br>
+            <div class="price-content">
+                <div class="price-content__card">
+                        <a href="#card-opened" class="card-opener">
+                            <span class="price">28 000 ₽</span>
+                            <h4><s>35 000 ₽</s></h4>
+                            <div class="price-content__footer">
+                                <span class="text"><u>Нажмите, чтобы<br>оплатить участие</u></span>
+<!--                                 <span class="ico">
+                                    <img src="images/arrow-card.svg" alt="">
+                                </span> -->
+                            </div>
+                        </a>
+                        <div class="card-popup">
+                            <a href="#" class="card-back">Покупка билета за 28 000 ₽ </a>
+                            <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+
+                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;">
+                                <input type="hidden" class="tinkoffPayRow" name="terminalkey" value="1554723222232">
+                                <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
+                                <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
+                                <input class="tinkoffPayRow" type="hidden" placeholder="Сумма заказа" name="amount" value="100" required>
+                                <input class="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" value="">
+                                <input class="tinkoffPayRow" type="hidden" placeholder="Описание заказа" name="description" value="Покупка билета на интенсив по продуктовому дизайну UX/UI от Ярослава Шуваева с 18 по 26 февраля">
+                                <input type="text" class="text" name="name" placeholder="Ваше имя" required>
+                                <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
+                                <input type="text" class="text phone-mask" name="phone" placeholder="+7 999 000 00 00" required>
+                                <button class="submit" type="submit">Оплатить участие</button>
+                            </form>
+                            <span class="bank-logo">
+                                <img src="images/bank-logo.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="card-form-success">
+                            <h3>Ваша заявка принята! </h3>
+                            <p>Вы успешно записались
+                                на интенсив, в ближайшее время
+                                с вами свяжется наш сотрудник,
+                                ответит на интерсующие вопросы!</p>
+                            <b class="thanks">Понятно, спасибо!</b>
+                        </div>
+                </div>
+                    <div class="price-content__text-box">
+                        <ul class="bulleted-list">
+                            <li>Занятия в оборудованной аудитории;</li>
+                            <li>Трансляция и запись<br>процесса в ZOOM;</li>
+                            <li>Сертификат, подтверждающий обучение на курсе.</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+<!--         <section class="video-section">
+            <div class="container">
+                <h2>Защита курса UX/UI на Флаконе при партнерстве Британской высшей школой дизайна, 2020 г.
+                </h2>
+                <p></p>
+                <div class="video-box">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rZyOYlvLTKA" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section> -->
+<!--         <section class="contacts">
+            <iframe src="https://uxacademy.ru" class="contacts-frame" frameborder="0" width="100%"
+                height="600"></iframe>
+        </section> -->
+        <footer class="footer">
+            <div class="container">
+                <span class="copy">UX Академия, 2020.<br><a href="http://uxacademy.ru/oferta">Пользовательское соглашение</a></span>
+                <ul class="socials-list">
+                    <li><a href="http://fb.com/groups/intensiveux"><img src="images/footer-social/facebook.svg" alt="" width="52" height="52"></a></li>
+                    <li><a href="http://instagram.com/uxui_official/"><img src="images/footer-social/instagram.svg" alt="" width="52" height="52"></a></li>
+                    <li><a href="http://t.me/uxui_official"><img src="images/footer-social/telegram.svg" alt="" width="52" height="52"></a></li>
+                    <li><a href="http://wa.me/+79686446490"><img src="images/footer-social/whatsapp.svg" alt="" width="52" height="52"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <canvas class="scene scene--full js-background" id="scene1"></canvas>
+
+    <!-- JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.accordion.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollToPlugin.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/demo6.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(71299294, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/71299294" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/ru_RU/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="105148274900781"
+        theme_color="#0D2B80">
+      </div>
+
+</body>
+</html>
