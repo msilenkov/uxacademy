@@ -56,16 +56,15 @@
                         <div class="card-popup">
                             <a href="#" class="card-back">Покупка билета за 28 000 ₽ </a>
                             <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
-                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;" netlify>
+                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;" data-netlify="true">
+                                <input type="text" class="text" name="name" placeholder="Ваше имя" required>
+                                <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
+                                <input type="зрщ" class="text phone-mask" name="phone" placeholder="+7 999 000 00 00" required>
                                 <input type="hidden" class="tinkoffPayRow" name="terminalkey" value="1554723222232">
                                 <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
                                 <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
                                 <input class="tinkoffPayRow" type="hidden" placeholder="Сумма заказа" name="amount" value="1" required>
-                                <input class="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" value="">
                                 <input class="tinkoffPayRow" type="hidden" placeholder="Описание заказа" name="description" value="Покупка билета на интенсив по продуктовому дизайну UX/UI от Ярослава Шуваева с 18 по 26 февраля">
-                                <input type="text" class="text" name="name" placeholder="Ваше имя" required>
-                                <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
-                                <input type="text" class="text phone-mask" name="phone" placeholder="+7 999 000 00 00" required>
                                 <button class="submit" type="submit">Оплатить участие</button>
                             </form>
                             <span class="bank-logo">
