@@ -58,20 +58,23 @@
                             <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
                             <form name="TinkoffPayForm" onsubmit="pay(this); return false;">
 
-                                <input type="name" 
+                                <input type="name"
                                        class="text" 
+                                       class="tinkoffPayRow" 
                                        name="name" 
                                        placeholder="Ваше имя" 
                                        required>
 
                                 <input type="email" 
-                                       class="text" 
+                                       class="text"
+                                       class="tinkoffPayRow"                                        
                                        name="email" 
                                        placeholder="Адрес E-mail" 
                                        required>
 
                                 <input type="phone" 
                                        class="text phone-mask" 
+                                       class="tinkoffPayRow"                                        
                                        name="phone" 
                                        placeholder="+7 999 000 00 00" 
                                        required>
