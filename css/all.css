@@ -1203,6 +1203,57 @@ h2 {
         .price-section .note span:last-child {
           margin-bottom: 0; } }
 
+
+.psd {
+  background: var(--section-background-blue); }
+  .psd .container {
+    height: 140vh;
+    min-height: 780px;
+    max-height: 1000px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    padding: 105px 30px 110px;
+    position: relative;
+    z-index: 3; }
+  .psd h2 {
+    color: #fff; }
+  .psd .note {
+    display: block;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 300;
+    color: #fff; }
+    .psd .note a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 2px solid #fff; }
+      .psd .note a:hover {
+        border-bottom: 2px solid rgba(0, 0, 0, 0); }
+    .psd .note .block {
+      display: block; }
+  @media all and (max-width: 1023px) {
+    .psd .container {
+      padding-bottom: 30px;
+      height: auto;
+      min-height: 100vh;
+      max-height: none; }
+    .psd h2 {
+      margin-bottom: 30px; }
+    .psd .note {
+      font-size: 24px;
+      line-height: 29px; }
+      .psd .note span {
+        display: block;
+        margin-bottom: 10px; }
+        .psd .note span:last-child {
+          margin-bottom: 0; } }
+
+
 .price-content {
   margin: auto 0 80px;
   display: -webkit-box;
@@ -1319,14 +1370,20 @@ h2 {
     background: -webkit-gradient(linear, right top, left top, from(#D9DDE1), to(#FFFFFF));
     background: -webkit-linear-gradient(right, #D9DDE1 0%, #FFFFFF 100%);
     background: linear-gradient(270deg, #D9DDE1 0%, #FFFFFF 100%);
-    padding: 11px 30px 29px;
+    padding: 18px 30px 29px;
     margin: 0 55px 0 0;
     color: #000;
     position: relative; }
+    .price-content__card h4 {
+    color: #000; 
+    display: block;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 100; }
     .price-content__card .price {
       display: block;
       font-weight: 300;
-      font-size: 104px;
+      font-size: 82px;
       line-height: 120%;
       color: #000; }
     .price-content__card:hover .price-content__footer .ico {
