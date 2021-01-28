@@ -58,68 +58,68 @@
                             <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
                             <form name="TinkoffPayForm" onsubmit="pay(this); return false;" netlify>
 
-                                <input class="tinkoffPayRow" 
+                                <input class="tinkoffPayRow"
                                        type="hidden"
                                        name="frame"
                                        value="false"
                                        >
 
                                 <input type="name"
-                                       class="text" 
-                                       class="tinkoffPayRow" 
-                                       name="name" 
-                                       placeholder="Ваше имя" 
-                                       required
-                                       >
-
-                                <input type="email" 
                                        class="text"
-                                       class="tinkoffPayRow"                                        
-                                       name="email" 
-                                       placeholder="Адрес E-mail" 
+                                       class="tinkoffPayRow"
+                                       name="name"
+                                       placeholder="Ваше имя"
                                        required
                                        >
 
-                                <input type="phone" 
-                                       class="text phone-mask" 
-                                       class="tinkoffPayRow"                                        
-                                       name="phone" 
-                                       placeholder="+7 999 000 00 00" 
+                                <input type="email"
+                                       class="text"
+                                       class="tinkoffPayRow"
+                                       name="email"
+                                       placeholder="Адрес E-mail"
                                        required
                                        >
 
-                                <input type="hidden" 
-                                       class="tinkoffPayRow" 
-                                       name="terminalkey" 
+                                <input type="phone"
+                                       class="text phone-mask"
+                                       class="tinkoffPayRow"
+                                       name="phone"
+                                       placeholder="+7 999 000 00 00"
+                                       required
+                                       >
+
+                                <input type="hidden"
+                                       class="tinkoffPayRow"
+                                       name="terminalkey"
                                        value="1554723222232"
                                        >
 
-                                <input class="tinkoffPayRow" 
-                                       type="hidden" 
-                                       name="frame" 
+                                <input class="tinkoffPayRow"
+                                       type="hidden"
+                                       name="frame"
                                        value="true"
                                        >
 
-                                <input class="tinkoffPayRow" 
-                                       type="hidden" 
+                                <input class="tinkoffPayRow"
+                                       type="hidden"
                                        name="language"
                                        value="ru"
                                        >
 
-                                <input class="tinkoffPayRow" 
+                                <input class="tinkoffPayRow"
                                        type="hidden"
                                        name="amount"
-                                       value="28000" 
+                                       value="28000"
                                        required
                                        >
 
-                                <input class="tinkoffPayRow" 
-                                       type="hidden" 
-                                       name="description" 
+                                <input class="tinkoffPayRow"
+                                       type="hidden"
+                                       name="description"
                                        value="Покупка билета на интенсив по продуктовому дизайну UX/UI от Ярослава Шуваева с 18 по 26 февраля"
                                        >
 
-                                <button class="submit" 
+                                <button class="submit"
                                         type="submit">Оплатить участие
                                 </button>
 
@@ -231,6 +231,21 @@
         page_id="105148274900781"
         theme_color="#0D2B80">
       </div>
+
+
+    <script>
+        // true - отображает сразу форму заявки, false - ссылку на форму
+        const isContact = true;
+
+        if (isContact) {
+            $('#Contact')
+                .children('.card-back').hide()
+                .children('.card-back-title').show();
+
+            $('.card-opener').hide();
+            $('.card-popup').addClass('active');
+        }
+    </script>
 
 </body>
 </html>
