@@ -89,7 +89,7 @@
             <div class="container">
 
                 <div class="subscribe-form">
-                    <form name="Notify Me" netlify action="#program">  
+                    <form name="Notify Me" id="NotifyMe" netlify action="#program">
                         <div class="subscribe-form__content">
                             <h2>Подпишитесь, чтобы следить за обновлениями курса.</h2>
                             <div class="subscribe-form__row">
@@ -1000,7 +1000,7 @@
                                                 <span class="time">16:00</span>
                                                 <div class="text-box">
                                                     <span class="title">Защита курсовых проектов</span>
-                                                    <span class="teacher-name">Ярослав Шуваев<br>Максим Силенков</span>                                                    
+                                                    <span class="teacher-name">Ярослав Шуваев<br>Максим Силенков</span>
                                                 </div>
                                             </div>
                                         </li>
@@ -1185,13 +1185,15 @@
                             </div>
                         </a>
                         <div class="card-popup">
-                            <a href="#" class="card-back">Записаться на интенсив</a>
-                            <form name="Сontact" netlify action="#price">
+                            <form name="Сontact" id="Contact" netlify action="#price">
+                                <a href="#" class="card-back">Записаться на интенсив</a>
+                                <p class="card-back-title">Записаться на интенсив</p>
                                 <input type="text" class="text" name="name" placeholder="Ваше имя" required>
                                 <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
                                 <input type="text" class="text phone-mask" name="phone" placeholder="+7 999 000 00 00" required>
                                 <button class="submit" type="submit">Отправить заявку</button>
-<!--                             </form>
+                             </form>
+<!--
                              <span class="bank-logo">
                                 <img src="images/bank-logo.svg" alt="">
                             </span> -->
@@ -1258,7 +1260,7 @@
                     </li>
                 <li>
                         <div class="teachers-list__image">
-                            <img src="images/faces/nenashev.jpg" alt="Александр Ненашев">                        
+                            <img src="images/faces/nenashev.jpg" alt="Александр Ненашев">
                         </div>
                         <h3>Александр Ненашев</h3>
                         <span class="role">Преподаватель</span>
@@ -1266,15 +1268,15 @@
                     </li>
                     <li>
                         <div class="teachers-list__image">
-                           <img src="images/faces/vetrov.jpg" alt="Юрий Ветров">        
+                           <img src="images/faces/vetrov.jpg" alt="Юрий Ветров">
                         </div>
                         <h3>Юрий Ветров</h3>
                         <span class="role">Преподаватель</span>
                         <p>Директор по бренду и дизайну в Райффайзен Банке</p>
-                    </li>                    
+                    </li>
                     <li>
                         <div class="teachers-list__image">
-                           <img src="images/faces/sychov.jpg" alt="Александр Сычёв">        
+                           <img src="images/faces/sychov.jpg" alt="Александр Сычёв">
                         </div>
                         <h3>Александр Сычёв</h3>
                         <span class="role">Преподаватель</span>
@@ -1475,6 +1477,34 @@
         page_id="105148274900781"
         theme_color="#0D2B80">
       </div>
+
+<script>
+    $( "#NotifyMe" ).submit(function( event ) {
+        event.preventDefault();
+
+        $( event.target ).children('.subscribe-form__content').hide();
+        $( event.target ).children('.thanks').show();
+    });
+
+    $( "#Contact" ).submit(function( event ) {
+        event.preventDefault();
+
+        $('.card-popup').removeClass('active');
+        $('.card-form-success').addClass('active');
+    });
+
+    // true - отображает сразу форму заявки, false - ссылку на форму
+    const isContact = true;
+
+    if (isContact) {
+        $('#Contact')
+            .children('.card-back').hide()
+            .children('.card-back-title').show();
+
+        $('.card-opener').hide();
+        $('.card-popup').addClass('active');
+    }
+</script>
 
 </body>
 </html>
