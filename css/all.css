@@ -1958,13 +1958,14 @@ h2 {
     background: #fff;
     border: 0;
     display: block;
-    width: 50%;
+    width: 30%;
     padding: 0 30px;
-    height: 68px; }
+    height: 68px; 
+    margin-right: 10px; }
   .subscribe-form .submit {
     display: block;
     border: 0;
-    width: 50%;
+    width: 30%;
     color: #fff;
     font-size: 24px;
     line-height: 120%;
@@ -1995,10 +1996,13 @@ h2 {
   @media all and (max-width: 767px) {
     .subscribe-form__row {
       display: block; }
+
     .subscribe-form .text {
       width: 100%;
       font-size: 20px;
-      margin-bottom: 15px; }
+      margin-bottom: 15px; 
+      padding-right: }
+
     .subscribe-form .submit {
       width: 100%;
       font-size: 20px; } }
