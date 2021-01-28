@@ -159,6 +159,14 @@ h5, .h5 {
   font-size: 16px;
   line-height: 24px; }
 
+h6, .h6 {
+  font-size: 18px;
+  line-height: 24px; 
+  color: #021526;
+  font-weight: 400;
+  margin: 0 0 0.6em;
+  }
+
 p {
   margin: 0 0 24px; }
 
@@ -1158,7 +1166,7 @@ h2 {
   background: var(--section-background-blue); }
   .price-section .container {
     height: 100vh;
-    min-height: 780px;
+    min-height: 765px;
     max-height: 900px;
     display: -webkit-box;
     display: flex;
@@ -1177,7 +1185,8 @@ h2 {
     font-size: 32px;
     line-height: 38px;
     font-weight: 300;
-    color: #fff; }
+    color: #fff; 
+  }
     .price-section .note a {
       color: #fff;
       text-decoration: none;
