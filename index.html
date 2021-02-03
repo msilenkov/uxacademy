@@ -98,7 +98,9 @@
 <!--                                  <span class="ico">
                                     <img src="images/arrow-card.svg" alt="">
                                 </span>  -->
+
                     </div>
+                        </a>
                         <div class="card-popup">
                             <form name="Сontact" netlify action="#price" id="Contact">
                                 <a href="#" class="card-form-success">Записаться</a>
@@ -1502,15 +1504,25 @@
             alert(error))
     }
 
+    const handleContactSubmit = (e) => {
+        e.preventDefault()
+        let myForm = document.getElementById('Contact');
+        let formData = new FormData(myForm)
+        fetch(myForm.getAttribute('action'), {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            console.log('Form successfully submitted')
+            $('.card-popup').removeClass('active');
+            $('.card-form-success').addClass('active');
+        }).catch((error) =>
+            alert(error))
+    }
+
     document.querySelector("#NotifyMe").addEventListener("submit", handleSubmit);
+    document.querySelector("#Contact").addEventListener("submit", handleContactSubmit);
 
-
-    $( "#Contact" ).submit(function( event ) {
-        event.preventDefault();
-
-        $('.card-popup').removeClass('active');
-        $('.card-form-success').addClass('active');
-    });
 
     // true - отображает сразу форму заявки, false - ссылку на форму
     const isContact = true;
@@ -1520,7 +1532,6 @@
             .children('.card-back').hide()
             .children('.card-back-title').show();
 
-        $('.card-opener').hide();
         $('.card-popup').addClass('active');
     }
 </script>
