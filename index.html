@@ -100,8 +100,7 @@
                                 </span>  -->
                     </div>
                         <div class="card-popup">
-                            <form name="Сontact" netlify action="#price">
-<!--                              id="Contact"  -->
+                            <form name="Сontact" netlify action="#price" id="Contact">
                                 <a href="#" class="card-form-success">Записаться</a>
                                 <h4 class="card-back-title">Записаться</p>
                                 <input type="text" class="text" name="name" placeholder="Ваше имя" required>
@@ -131,7 +130,7 @@
                             <li>Сертификат.</li>
                         </ul>
                     </div>
-                </div> 
+                </div>
                 <span class="note">
                     <span class="block">Образование по принципам Peer 2 Peer — 👋 💪 👌.</span>
                     <span class="block">👋 — Обмен опытом внутри команды, 💪 — Лекции и воркшопы,</span>
@@ -1389,18 +1388,17 @@
         <section class="subscribe-section">
             <div class="container">
                 <div class="subscribe-form">
-                    <form name="Notify Me" netlify action="#program">
-                         <!--    id="NotifyMe"  -->
+                    <form name="Notify Me" netlify action="#program" id="NotifyMe">
                         <div class="subscribe-form__content">
                             <h2>Остались вопросы?</h2>
                             <div class="subscribe-form__row">
-                                <input type="name" class="text" name="name" placeholder="Ваш вопрос" required>           
+                                <input type="name" class="text" name="name" placeholder="Ваш вопрос" required>
                                 <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
                                 <button class="submit" type="submit">Отправить</button>
                             </div>
                         </div>
-                        <div class="thanks">Вопрос отправлен! <br>Мы свяжемся и ответим.</div>
                     </form>
+                    <div class="thanks" id="NotifyMe-thanks">Вопрос отправлен! <br>Мы свяжемся и ответим.</div>
                 </div>
             </div>
         </section>
@@ -1488,12 +1486,24 @@
       </div>
 
 <script>
-    $( "#NotifyMe" ).submit(function( event ) {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        let myForm = document.getElementById('NotifyMe');
+        let formData = new FormData(myForm)
+        fetch(myForm.getAttribute('action'), {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            console.log('Form successfully submitted')
+            $( "#NotifyMe" ).hide();
+            $( "#NotifyMe-thanks" ).show();
+        }).catch((error) =>
+            alert(error))
+    }
 
-        $( event.target ).children('.subscribe-form__content').hide();
-        $( event.target ).children('.thanks').show();
-    });
+    document.querySelector("#NotifyMe").addEventListener("submit", handleSubmit);
+
 
     $( "#Contact" ).submit(function( event ) {
         event.preventDefault();
