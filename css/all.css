@@ -159,6 +159,14 @@ h5, .h5 {
   font-size: 16px;
   line-height: 24px; }
 
+h6, .h6 {
+  font-size: 18px;
+  line-height: 24px; 
+  color: #021526;
+  font-weight: 400;
+  margin: 0 0 0.6em;
+  }
+
 p {
   margin: 0 0 24px; }
 
@@ -1158,7 +1166,7 @@ h2 {
   background: var(--section-background-blue); }
   .price-section .container {
     height: 100vh;
-    min-height: 780px;
+    min-height: 765px;
     max-height: 900px;
     display: -webkit-box;
     display: flex;
@@ -1177,7 +1185,8 @@ h2 {
     font-size: 32px;
     line-height: 38px;
     font-weight: 300;
-    color: #fff; }
+    color: #fff; 
+  }
     .price-section .note a {
       color: #fff;
       text-decoration: none;
@@ -1378,7 +1387,7 @@ h2 {
     color: #000; 
     display: block;
     font-size: 32px;
-    line-height: 38px;
+    line-height: 24px;
     font-weight: 100; }
     .price-content__card .price {
       display: block;
@@ -1958,13 +1967,14 @@ h2 {
     background: #fff;
     border: 0;
     display: block;
-    width: 50%;
+    width: 30%;
     padding: 0 30px;
-    height: 68px; }
+    height: 68px; 
+    margin-right: 10px; }
   .subscribe-form .submit {
     display: block;
     border: 0;
-    width: 50%;
+    width: 30%;
     color: #fff;
     font-size: 24px;
     line-height: 120%;
@@ -1995,10 +2005,13 @@ h2 {
   @media all and (max-width: 767px) {
     .subscribe-form__row {
       display: block; }
+
     .subscribe-form .text {
       width: 100%;
       font-size: 20px;
-      margin-bottom: 15px; }
+      margin-bottom: 15px; 
+      padding-right: }
+
     .subscribe-form .submit {
       width: 100%;
       font-size: 20px; } }
