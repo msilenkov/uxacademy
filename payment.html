@@ -55,7 +55,7 @@
                         <div class="card-popup">
                             <h4 class="card-back-title">Билет за 35 000 ₽</h4></a>
                             <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
-                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;" netlify>
+                            <form name="Pay" netlify action="#" id="Pay20" onsubmit="pay(this); return false;">
 
                                 <input class="tinkoffPayRow"
                                        type="hidden"
@@ -232,19 +232,36 @@
       </div>
 
 
-    <script>
-        // true - отображает сразу форму заявки, false - ссылку на форму
-        const isContact = true;
+<script>
+    const handleContactSubmit = (e) => {
+        e.preventDefault()
+        let myForm = document.getElementById('Pay');
+        let formData = new FormData(myForm)
+        fetch(myForm.getAttribute('action'), {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            console.log('Form successfully submitted')
+            $('.card-popup').removeClass('active');
+            $('.card-form-success').addClass('active');
+        }).catch((error) =>
+            alert(error))
+    }
 
-        if (isContact) {
-            $('#Contact')
-                .children('.card-back').hide()
-                .children('.card-back-title').show();
+    document.querySelector("#Pay").addEventListener("submit", handleContactSubmit);
 
-            $('.card-opener').hide();
-            $('.card-popup').addClass('active');
-        }
-    </script>
+    // true - отображает сразу форму заявки, false - ссылку на форму
+    const isContact = true;
+
+    if (isContact) {
+        $('#Pay')
+            .children('.card-back').hide()
+            .children('.card-back-title').show();
+
+        $('.card-popup').addClass('active');
+    }
+</script>
 
 </body>
 </html>
