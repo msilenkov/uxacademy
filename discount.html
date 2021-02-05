@@ -60,7 +60,7 @@
                         <div class="card-popup">
                             <h4 class="card-back-title">Билет за 28 000 ₽</h4>
                             <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
-                            <form name="TinkoffPayForm" onsubmit="pay(this); return false;" netlify action="https://flacon.uxacademy.ru/" id="Payment Discount">
+                            <form name="PDiscount" netlify action="#" id="PDiscount" onsubmit="pay(this); return false;">
 
                                 <input type="name"
                                        class="text"
@@ -234,7 +234,7 @@
 <script>
     const handleContactSubmit = (e) => {
         e.preventDefault()
-        let myForm = document.getElementById('Payment Discount');
+        let myForm = document.getElementById('PDiscount');
         let formData = new FormData(myForm)
         fetch(myForm.getAttribute('action'), {
             method: 'POST',
@@ -248,7 +248,7 @@
             alert(error))
     }
 
-    document.querySelector("#Payment Discount").addEventListener("submit", handleContactSubmit);
+    document.querySelector("#PDiscount").addEventListener("submit", handleContactSubmit);
 
     // true - отображает сразу форму заявки, false - ссылку на форму
     const isContact = true;
