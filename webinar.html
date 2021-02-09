@@ -59,17 +59,17 @@
                 <div class="intro__content">
                     <h1>Вебинар<b><br>Разница в подходах проектирования B2B и B2C,</b><br>10 февраля 2021 в 19:00</h1>
                     <p>К интенсиву 18-26 февраля UX/UI<br>по продуктовому дизайну</a> в партнерстве<br>с Mail.ru, Альфа-Банк, Флакон, Ак Барс Банк</p>
-                    <div class="contact-row">
-                        <a href="#subscribe" class="btn">
-                            <span class="btn-text">Записаться <span>на вебинар</span></span>
-                            <span class="btn-ico">
-                                <img src="images/arrow.svg" alt="">
-                            </span>
-                        </a>
-<!--                         <span class="phone-info">
-                            <a href="http://t.me/uxui_official"><u>Следить за обновлениями<br>в канале Telegram</u></a>
-                        </span> -->
-                    </div>
+                <div class="subscribe-form">
+                    <form name="Webinar" netlify action="#program">
+                         <div class="subscribe-form__row">
+                                <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
+                                <button class="submit" type="submit">Записаться</button>
+                        </div>
+                        <div class="thanks"><b>Вы подписаны!</b><br>
+                            Мы будем оповещать о самых
+                            важных событиях.</div>
+                    </form>
+                </div>
                 </div>
                 <div class="intro__footer">
                     <div class="intro__footer-text">
@@ -84,25 +84,37 @@
                 </div>
             </div>
         </section>
-        <section class="subscribe-section" id="subscribe">
-            <div class="container">
 
+
+        <section class="subscribe-section">
+            <div class="container">
                 <div class="subscribe-form">
-                    <form name="Webinar" netlify action="#program">  
+                    <form name="Notify Me" netlify action="#program" id="NotifyMe">
                         <div class="subscribe-form__content">
-                            <h2>Зарегистрироваться<br>на вебинар</b></h2>
+                            <h2>Остались вопросы?</h2>
+                            <h2 style="color: #fff; font-weight: 400">Подключайтесь<br>в телеграм-канал <a href style="color: #fff" ="https://t.me/silenkov">t.me/uxui_official</a></h2>
                             <div class="subscribe-form__row">
-                                <input type="email" class="text" name="email" placeholder="Адрес E-mail" required>
-                                <button class="submit" type="submit">Записаться</button>
                             </div>
                         </div>
-                        <div class="thanks"><b>Вы подписаны!</b><br>
-                            Мы будем оповещать о самых
-                            важных событиях.</div>
                     </form>
+                    <div class="thanks" id="NotifyMe-thanks">Вопрос отправлен! <br>Мы свяжемся и ответим.</div>
                 </div>
             </div>
         </section>
+
+
+        <section class="video-section" id="video-section">
+            <div class="container">
+                <h2>Вебинар от 1 февраля<b><br>Разбор кейса. Чек-лист по процессу
+                </h2>
+                <p></p>
+                <div class="video-box">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Vw2EprihDL8" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
         <section class="intensive" id="program">
             <div class="container">
                 <h2>Программа интенсива, 9 дней</h2>
